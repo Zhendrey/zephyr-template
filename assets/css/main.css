@@ -1929,6 +1929,13 @@ input, select, textarea {
 	#header-wrapper {
 		padding: 4.5em 0 3em 0;
 	}
+	#header-wrapper.fixed{
+		padding: 0;
+		background-color: white;
+	}
+	#header-wrapper.fixed #header{
+		padding: 15px 0;
+	}
 
 	#features-wrapper {
 		padding: 3em 0 3em 0;
