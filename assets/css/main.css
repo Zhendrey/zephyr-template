@@ -2343,6 +2343,10 @@ input, select, textarea {
 				-webkit-backface-visibility: hidden;
 				-ms-backface-visibility: hidden;
 				backface-visibility: hidden;
+				-moz-transform: translateX(0);
+				-webkit-transform: translateX(0);
+				-ms-transform: translateX(0);
+				transform: translateX(0);
 				-moz-transition: -moz-transform 0.5s ease;
 				-webkit-transition: -webkit-transform 0.5s ease;
 				-ms-transition: -ms-transform 0.5s ease;
@@ -2361,7 +2365,7 @@ input, select, textarea {
 				transition: transform 0.5s ease;
 				display: inline-block;
 				height: 44px;
-				right: 0;
+				left: 0;
 				position: fixed;
 				top: 0;
 				width: 100%;
@@ -2392,7 +2396,7 @@ input, select, textarea {
 						display: inline-block;
 						text-decoration: none;
 						position: absolute;
-						right: 0;
+						left: 0;
 						top: 6px;
 						background-color: var(--dark-red);
 						width: 58px;
@@ -2414,24 +2418,24 @@ input, select, textarea {
 				-webkit-backface-visibility: hidden;
 				-ms-backface-visibility: hidden;
 				backface-visibility: hidden;
-				-moz-transform: translateX(275px);
-				-webkit-transform: translateX(275px);
-				-ms-transform: translateX(275px);
-				transform: translateX(275px);
+				-moz-transform: translateX(-275px);
+				-webkit-transform: translateX(-275px);
+				-ms-transform: translateX(-275px);
+				transform: translateX(-275px);
 				-moz-transition: -moz-transform 0.5s ease;
 				-webkit-transition: -webkit-transform 0.5s ease;
 				-ms-transition: -ms-transform 0.5s ease;
 				transition: transform 0.5s ease;
 				display: block;
 				height: 100%;
-				right: 0;
+				left: 0;
 				overflow-y: auto;
 				position: fixed;
 				top: 0;
 				width: 275px;
 				background: #fff;
 				box-shadow: inset -3px 0px 0px 0px #dfdfdf;
-				padding: 0 23px 0 20px;
+				padding: 50px 23px 0 20px;
 			}
 
 				#navPanel .link {
