@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>HierarchyData</key>
+	<array>
+		<string>761C5081-10C3-4FFF-8C40-2D6643A4F69B</string>
+	</array>
+	<key>ProjectItems</key>
+	<dict>
+		<key>761C5081-10C3-4FFF-8C40-2D6643A4F69B</key>
+		<dict>
+			<key>ItemData</key>
+			<dict>
+				<key>BookmarkData</key>
+				<data>
+				Ym9va+gCAAAAAAQQMAAAALWnG//AUQA55yDMuj70BI8T
+				xw8go7HmzsLDeQYtRhjW5AEAAAQAAAADAwAAAAgAKAUA
+				AAABAQAAVXNlcnMAAAAGAAAAAQEAADU5MDM5MgAACQAA
+				AAEBAABEb2N1bWVudHMAAAAGAAAAAQEAAEdpdEh1YgAA
+				DwAAAAEBAAB6ZXBoeXItdGVtcGxhdGUAFAAAAAEGAAAQ
+				AAAAIAAAADAAAABEAAAAVAAAAAgAAAAEAwAAXUIAAAAA
+				AAAIAAAABAMAACDeFAAAAAAACAAAAAQDAABS3hQAAAAA
+				AAgAAAAEAwAA4KjEAQAAAAAIAAAABAMAAOGoxAEAAAAA
+				FAAAAAEGAACIAAAAmAAAAKgAAAC4AAAAyAAAAAgAAAAA
+				BAAAQca9CboMf6UYAAAAAQIAAAIAAAAAAAAADwAAAAAA
+				AAAAAAAAAAAAAAgAAAAEAwAAAwAAAAAAAAAEAAAAAwMA
+				AIYK114IAAAAAQkAAGZpbGU6Ly8vDAAAAAEBAABNYWNp
+				bnRvc2ggSEQIAAAABAMAAABQoRtzAAAACAAAAAAEAABB
+				xkTXWoAAACQAAAABAQAARDQzRDYwOEItMjlDMC00NkQz
+				LUJBM0UtOTUzODk0NEJGMTIyGAAAAAECAACBAAAAAQAA
+				AO8TAAABAAAAAAAAAAAAAAABAAAAAQEAAC8AAAAAAAAA
+				AQUAAMwAAAD+////AQAAAAAAAAAQAAAABBAAAGwAAAAA
+				AAAABRAAANgAAAAAAAAAEBAAAAQBAAAAAAAAQBAAAPQA
+				AAAAAAAAAiAAANABAAAAAAAABSAAAEABAAAAAAAAECAA
+				AFABAAAAAAAAESAAAIQBAAAAAAAAEiAAAGQBAAAAAAAA
+				EyAAAHQBAAAAAAAAICAAALABAAAAAAAAMCAAANwBAAAA
+				AAAAAcAAACQBAAAAAAAAEcAAACAAAAAAAAAAEsAAADQB
+				AAAAAAAAENAAAAQAAAAAAAAA
+				</data>
+				<key>FileURL</key>
+				<string>file:///Users/590392/Documents/GitHub/zephyr-template/</string>
+				<key>HasSecurityScope</key>
+				<true/>
+				<key>RelativePath</key>
+				<string>./</string>
+				<key>TypeID</key>
+				<string>_CFileLocator</string>
+				<key>Version</key>
+				<integer>1</integer>
+			</dict>
+			<key>ItemName</key>
+			<string>zephyr-template</string>
+			<key>ItemType</key>
+			<string>FolderReference</string>
+		</dict>
+	</dict>
+	<key>com.barebones.DocumentFormatVersion</key>
+	<integer>5</integer>
+	<key>com.barebones.DocumentType</key>
+	<string>Project</string>
+</dict>
+</plist>
