@@ -251,7 +251,7 @@ input, select, textarea {
 	}
 
 	a {
-		color: #0090c5;
+		color: #220388;
 		text-decoration: underline;
 	}
 
@@ -1724,7 +1724,7 @@ input, select, textarea {
 		-webkit-appearance: none;
 		position: relative;
 		display: inline-block;
-		background: #0090c5;
+		background: var(--dark-red);
 		color: #fff;
 		text-decoration: none;
 		border-radius: 6px;
@@ -1751,7 +1751,7 @@ input, select, textarea {
 		input[type="reset"]:hover,
 		button:hover,
 		.button:hover {
-			background: #10a0d5;
+			background: var(--dark-red);
 		}
 
 		input[type="button"]:active,
@@ -1759,7 +1759,7 @@ input, select, textarea {
 		input[type="reset"]:active,
 		button:active,
 		.button:active {
-			background: #20b0e5;
+			background: var(--dark-red);
 		}
 
 		input[type="button"].alt,
