@@ -103,6 +103,13 @@ div.row__content {
 	font-style: italic;
 }
 
+
+.box.feature{
+	border-radius: 10px;
+}
+.image.box__image img{
+	border-radius: 10px;
+}
 .box.feature{
 	text-align: center;
 }
