@@ -58,13 +58,11 @@ h2{
 	border: 2px solid var(--dark-blue);
 }
 .row {
-<<<<<<< HEAD
 	text-align: center;
 	justify-content: center;
-=======
-	justify-content: center;
 	text-align: center;
->>>>>>> 40497a23e40037a7c87f49b7dcc991f24909fb1c
+	align-items: flex-start;
+	gap: 1rem;
 }
 .banner__row {
 }
@@ -105,6 +103,13 @@ div.row__content {
 	font-style: italic;
 }
 
+
+.box.feature{
+	border-radius: 10px;
+}
+.image.box__image img{
+	border-radius: 10px;
+}
 .box.feature{
 	text-align: center;
 }
@@ -534,6 +539,7 @@ input, select, textarea {
 		.row {
 			margin-top: -40px;
 			margin-left: -40px;
+			padding-left: 45px;
 		}
 
 			
@@ -586,7 +592,7 @@ input, select, textarea {
 				display: flex;
 				flex-wrap: wrap;
 				box-sizing: border-box;
-				align-items: stretch;
+				align-items: flex-start;
 			}
 
 				.row > * {
@@ -773,6 +779,7 @@ input, select, textarea {
 						}
 
 				.row {
+					padding-left: 45px;
 					margin-top: -40px;
 					margin-left: -40px;
 				}
@@ -1018,6 +1025,7 @@ input, select, textarea {
 				.row {
 					margin-top: -25px;
 					margin-left: -25px;
+					padding-left: 30px;
 				}
 
 					.row.gtr-uniform {
@@ -1501,6 +1509,7 @@ input, select, textarea {
 
 				.row {
 					margin: 0 auto;
+					padding: 0;
 				}
 
 			
