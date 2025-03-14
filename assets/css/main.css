@@ -348,9 +348,9 @@ input, select, textarea {
 
 	.row {
 		display: flex;
-		flex-wrap: wrap;
 		box-sizing: border-box;
 		align-items: stretch;
+
 	}
 
 		.row > * {
@@ -590,7 +590,6 @@ input, select, textarea {
 
 			.row {
 				display: flex;
-				flex-wrap: wrap;
 				box-sizing: border-box;
 				align-items: flex-start;
 			}
@@ -834,7 +833,6 @@ input, select, textarea {
 
 			.row {
 				display: flex;
-				flex-wrap: wrap;
 				box-sizing: border-box;
 				align-items: stretch;
 			}
