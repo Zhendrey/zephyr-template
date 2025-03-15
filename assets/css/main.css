@@ -101,6 +101,37 @@ div.row__content {
 	font-style: italic;
 }
 
+div.features__row .image {
+}
+div.features__row .image img{
+	max-height: 300px;
+	object-fit: cover;
+}
+
+div.special-row{
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	gap: 1rem;
+}
+div.special-row{
+	padding-left: 30px;
+}
+div.special-row > .col-4{
+	flex: 1 1 400px;
+}
+@media (min-width: 981px) {
+	div.special-row{
+		padding-left: 45px;
+		align-items: flex-end;
+	}
+}
+@media (max-width: 736px) {
+	div.special-row{
+		padding-left: 0;
+	}
+}
+
 .box.feature{
 	text-align: center;
 }
@@ -337,7 +368,7 @@ input, select, textarea {
 
 /* Row */
 
-	.row {
+	.row:not(.features__row) {
 		display: flex;
 		flex-wrap: wrap;
 		box-sizing: border-box;
@@ -578,11 +609,11 @@ input, select, textarea {
 
 		@media screen and (max-width: 1680px) {
 
-			.row {
+			.row:not(.features__row){
 				display: flex;
 				flex-wrap: wrap;
 				box-sizing: border-box;
-				align-items: stretch;
+				align-items: flex-start;
 			}
 
 				.row > * {
@@ -826,6 +857,12 @@ input, select, textarea {
 				flex-wrap: wrap;
 				box-sizing: border-box;
 				align-items: stretch;
+			}
+			.features__row{
+				display: flex;
+				flex-wrap: nowrap;
+				box-sizing: border-box;
+				align-items: flex-start;
 			}
 
 				.row > * {
@@ -1724,7 +1761,7 @@ input, select, textarea {
 		-webkit-appearance: none;
 		position: relative;
 		display: inline-block;
-		background: #0090c5;
+		background: var(--dark-red);
 		color: #fff;
 		text-decoration: none;
 		border-radius: 6px;
