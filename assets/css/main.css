@@ -46,10 +46,16 @@
 	object-fit: cover;
 }
 
+.translateY-80{
+	transform: translateY(80px);
+}
+
 
 /*BANNER*/
 
-
+#banner{
+	margin-bottom: 3rem;
+}
 .banner__contanier {
 	border: 2px solid var(--dark-blue);
 }
@@ -167,6 +173,13 @@ div.special-row > .col-4{
 		font-size: 1.3rem;
 	}
 }
+
+	.translateY-down160{
+		transform: translateY(160px);
+	}
+	.translateY-100{
+		transform: translateY(100px);
+	}
 
 div#page-wrapper{
 	padding-inline: 15px;
@@ -1795,7 +1808,7 @@ input, select, textarea {
 		input[type="reset"]:hover,
 		button:hover,
 		.button:hover {
-			background: #10a0d5;
+			text-decoration: underline;
 		}
 
 		input[type="button"]:active,
@@ -1925,7 +1938,7 @@ input, select, textarea {
 		}
 
 			.box.feature .inner {
-				padding: 4em 2em 3em 2em;
+				padding: 2.5em 2em;
 			}
 
 			.box.feature h2 {
@@ -2132,6 +2145,7 @@ input, select, textarea {
 
 				#nav ul li:hover a, #nav ul li:hover span {
 					background: #fff;
+					text-decoration: underline;
 				}
 
 				#nav ul li.active a, #nav ul li.active span {
@@ -2300,6 +2314,9 @@ input, select, textarea {
 
 	#navPanel, #navToggle {
 		display: none;
+	}
+	#navPanel a:hover{
+		text-decoration: underline;
 	}
 
 	@media screen and (max-width: 980px) {
