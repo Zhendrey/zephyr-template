@@ -115,6 +115,7 @@ div.special-row{
 	gap: 1rem;
 }
 div.special-row{
+	align-items: stretch;
 	padding-left: 30px;
 }
 div.special-row > .col-4{
@@ -133,7 +134,13 @@ div.special-row > .col-4{
 }
 
 .box.feature{
+	height: 100%;
 	text-align: center;
+}
+.box.feature .image img{
+	max-height: 300px;
+    min-height: 300px;
+    object-fit: cover;
 }
 .box.feature .inner header h2{
 	font-family: "Helvetica";
@@ -613,7 +620,7 @@ input, select, textarea {
 				display: flex;
 				flex-wrap: wrap;
 				box-sizing: border-box;
-				align-items: flex-start;
+				align-items: stretch;
 			}
 
 				.row > * {
