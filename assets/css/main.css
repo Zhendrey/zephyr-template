@@ -54,13 +54,10 @@
 	border: 2px solid var(--dark-blue);
 }
 .row {
-<<<<<<< HEAD
 	text-align: center;
 	justify-content: center;
-=======
 	justify-content: center;
 	text-align: center;
->>>>>>> 40497a23e40037a7c87f49b7dcc991f24909fb1c
 }
 .banner__row {
 }
@@ -95,6 +92,10 @@ div.row__content {
 	font-style: italic;
 
 }
+
+
+/*FEATURES*/
+
 .row__text {
 	z-index: 2;
 	color: var(--offwhite);
