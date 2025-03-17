@@ -46,13 +46,10 @@
 	object-fit: cover;
 }
 
-<<<<<<< HEAD
 h2{
 	text-style: capitalize;
-=======
 .translateY-80{
 	transform: translateY(80px);
->>>>>>> 9c3f538b502fc297f7b6307a65d3ea256a229c87
 }
 
 
@@ -67,14 +64,11 @@ h2{
 .row {
 	text-align: center;
 	justify-content: center;
-<<<<<<< HEAD
 	text-align: center;
 	align-items: flex-start;
 	gap: 1rem;
-=======
 	justify-content: center;
 	text-align: center;
->>>>>>> 9c3f538b502fc297f7b6307a65d3ea256a229c87
 }
 .banner__row {
 }
@@ -118,7 +112,6 @@ div.row__content {
 	font-style: italic;
 }
 
-<<<<<<< HEAD
 
 .box.feature{
 	border-radius: 10px;
@@ -126,7 +119,6 @@ div.row__content {
 .image.box__image img{
 	border-radius: 10px;
 }
-=======
 div.features__row .image {
 }
 div.features__row .image img{
@@ -159,7 +151,6 @@ div.special-row > .col-4{
 	}
 }
 
->>>>>>> 9c3f538b502fc297f7b6307a65d3ea256a229c87
 .box.feature{
 	height: 100%;
 	text-align: center;
