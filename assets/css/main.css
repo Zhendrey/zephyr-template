@@ -48,6 +48,7 @@
 
 h2{
 	text-style: capitalize;
+}
 .translateY-80{
 	transform: translateY(80px);
 }
@@ -2857,5 +2858,3 @@ input, select, textarea {
 			#copyright {
 				text-align: left;
 			}
-
-	}
