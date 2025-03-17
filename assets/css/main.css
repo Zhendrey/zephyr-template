@@ -1822,11 +1822,8 @@ input, select, textarea {
 		input[type="reset"]:hover,
 		button:hover,
 		.button:hover {
-<<<<<<< HEAD
 			background: var(--dark-red);
-=======
 			text-decoration: underline;
->>>>>>> 9c3f538b502fc297f7b6307a65d3ea256a229c87
 		}
 
 		input[type="button"]:active,
