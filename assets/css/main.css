@@ -645,8 +645,9 @@ input, select, textarea {
 
 			.row:not(.features__row){
 				display: flex;
+				flex-wrap: wrap;
 				box-sizing: border-box;
-				align-items: flex-start;
+				align-items: stretch;
 			}
 
 				.row > * {
