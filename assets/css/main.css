@@ -48,6 +48,7 @@
 
 h2{
 	text-style: capitalize;
+}
 .translateY-80{
 	transform: translateY(80px);
 }
@@ -644,8 +645,9 @@ input, select, textarea {
 
 			.row:not(.features__row){
 				display: flex;
+				flex-wrap: wrap;
 				box-sizing: border-box;
-				align-items: flex-start;
+				align-items: stretch;
 			}
 
 				.row > * {
@@ -2857,5 +2859,3 @@ input, select, textarea {
 			#copyright {
 				text-align: left;
 			}
-
-	}
