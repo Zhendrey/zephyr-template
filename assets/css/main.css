@@ -38,6 +38,14 @@
 	.header{
 		justify-content: space-between;
 	}
+	#features-wrapper{
+		margin-left: -45px;
+	}
+}
+@media (max-width: 736px) {
+	#features-wrapper{
+		margin-left: 0;
+	}
 }
 
 .header__logo img{
@@ -82,6 +90,9 @@ h2{
 	text-decoration: underline;
 	color: var(--dark-red);
 	font-weight: bold;
+}
+.fz-medium{
+	font-size: 1.25rem;
 }
 .fz-larger{
 	font-size: 1.5rem;
@@ -669,7 +680,6 @@ input, select, textarea {
 
 			.row:not(.features__row){
 				display: flex;
-				flex-wrap: wrap;
 				box-sizing: border-box;
 				align-items: stretch;
 			}
@@ -1163,6 +1173,9 @@ input, select, textarea {
 				flex-wrap: wrap;
 				box-sizing: border-box;
 				align-items: stretch;
+			}
+			#features-wrapper{
+				margin-left: -30px
 			}
 
 				.row > * {
