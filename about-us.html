@@ -19,7 +19,7 @@
 					<header id="header" class="header container">
 
 						<!-- Logo -->
-							<a href="#" class="header__logo" id="logo">
+							<a href="index.html" class="header__logo" id="logo">
 								<img src="./images/Zephyr-logo.svg" alt="Zephyr logo-1">
 							</a>
 
@@ -39,11 +39,12 @@
 			<!-- Banner -->
 				<div id="banner-wrapper banner">
 					<div id="banner" class="box container banner__contanier">
-						<img 
-						src="./images/about-us-intro.webp" 
-						alt="airplane flying during sunset"
-						class="row__image"
-						>
+						<div class="row__image">
+							<img 
+							src="./images/about-us-intro.webp" 
+							alt="airplane flying during sunset"
+							>
+						</div>
 						<div class="row banner__row">
 							<div class="col-7 col-12-medium row__content">
 								<h2 class="row__title">About Us</h2>
@@ -58,19 +59,21 @@
 			<!-- Features -->
 				<div id="features-wrapper">
 					<div class="container">
-						<div class="row">
+						<div class="row special-row">
 							<div class="col-4 col-12-medium">
 
 								<!-- Box -->
 									<section class="box feature">
-										<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+										<a href="#" class="box__image image featured"><img src="images/our-business.jpg" alt="" /></a>
 										<div class="inner">
 											<header>
 												<h2>Our Business</h2>
-												<p>Modern and Efficient</p>
+												<h3 class="fz-medium"> Modern and Efficient</h3>
 											</header>
-											<p>Our state-of-the-art fleet is designed to provide the utmost comfort and safety for our passengers. We continuously update our aircraft to ensure the best flying experience.</p>
-										</div>
+<div class="box__text">
+												<p>Our state-of-the-art fleet is designed to provide the <strong class="text-style">upmost comfort and safety</strong> for our passengers. We continuously update our aircraft to <strong class="text-style">ensure the best flying experience</strong>.</p>
+	
+</div>										</div>
 									</section>
 
 							</div>
@@ -78,14 +81,16 @@
 
 								<!-- Box -->
 									<section class="box feature">
-										<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
+										<a href="#" class="box__image image featured"><img src="images/flight-attendants.jpg" alt="Our flight attendants" /></a>
 										<div class="inner">
 											<header>
 												<h2>Our People</h2>
-												<p>Dedicated and Professional</p>
+												<h3 class="fz-medium">Dedicated and Professional</h3>
 											</header>
-											<p>Our team of experienced professionals is committed to providing exceptional service. From our pilots to our cabin crew, every member of Zephyr Airlines is here to make your journey memorable.</p>
-										</div>
+<div class="box__text">
+												<p>Our team of <strong class="text-style">experienced professionals</strong> is committed to providing <strong class="text-style">exceptional service</strong>. From our pilots to our cabin crew, every member of Zephyr Airlines is<strong class="text-style"> here to make your journey memorable.</strong></p>
+	
+</div>										</div>
 									</section>
 
 							</div>
@@ -93,14 +98,16 @@
 
 								<!-- Box -->
 									<section class="box feature">
-										<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+										<a href="#" class="box__image image featured"><img src="images/community.jpg" alt="Zephyr staff" /></a>
 										<div class="inner">
 											<header>
-												<h2>Our Communities</h2>
-												<p>Global Reach</p>
+												<h2>Our Community</h2>
+												<h3 class="fz-medium">Global Reach</h3>
 											</header>
-											<p>We connect you to over 100 destinations worldwide. Whether you're traveling for business or leisure, Zephyr Airlines takes you where you need to go with ease and comfort.</p>
-										</div>
+<div class="box__text">
+												<p>We connect you to <strong class="text-style">over 100 destinations worldwide</strong>. Whether you're traveling for business or leisure, Zephyr Airlines takes you where you need to go with ease and comfort..</p>
+	
+</div>										</div>
 									</section>
 
 							</div>
@@ -115,20 +122,20 @@
 							<div class="col-4 col-12-medium">
 
 								<!-- Sidebar -->
-									<div id="sidebar">
-										<section class="widget thumbnails">
-											<h3>Our Services</h3>
-											<div class="grid">
-												<div class="row gtr-50">
-													<div class="col-6"><a href="#" class="image fit"><img src="images/pic04.jpg" alt="" /></a></div>
-													<div class="col-6"><a href="#" class="image fit"><img src="images/pic05.jpg" alt="" /></a></div>
-													<div class="col-6"><a href="#" class="image fit"><img src="images/pic06.jpg" alt="" /></a></div>
-													<div class="col-6"><a href="#" class="image fit"><img src="images/pic07.jpg" alt="" /></a></div>
-												</div>
+								<div id="sidebar">
+									<section class="widget thumbnails">
+										<h3>learn about our flight classes </h3>
+										<div class="grid">
+											<div class="row gtr-50">
+												<div class="col-6"><a href="#" class="image fit text-style fz-medium"><img src="images/economy-class.webp" alt="economy class" />Economy class</a></div>
+												<div class="col-6"><a href="#" class="image fit text-style fz-medium"><img src="images/business-class.webp" alt="business class" />Busimess class</a></div>
+												<div class="col-6"><a href="#" class="image fit text-style fz-medium"><img src="images/first-class.webp" alt="first class" />First class</a></div>
+												<div class="col-6"><a href="#" class="image fit text-style fz-medium"><img src="images/premium-class.webp" alt="premuim class" />Premium Class</a></div>
 											</div>
-											<a href="#" class="button icon fa-file-alt">More</a>
-										</section>
-									</div>
+										</div>
+										<a href="#" class="button icon fa-file-alt">More</a>
+									</section>
+								</div>
 
 							</div>
 							<div class="col-8 col-12-medium imp-medium">
@@ -149,84 +156,83 @@
 				</div>
 
 			<!-- Footer -->
-				<div id="footer-wrapper">
-					<footer id="footer" class="container">
-						<div class="row">
-							<div class="col-3 col-6-medium col-12-small">
+			<footer id="footer" class="container translateY-down50">
+				<div class="row">
+					<div class="col-3 col-6-medium col-12-small">
 
-								<!-- Links -->
-									<section class="widget links">
-										<h3>Quick Links</h3>
-										<ul class="style2">
-											<li><a href="#">Flight Status</a></li>
-											<li><a href="#">Check-in</a></li>
-											<li><a href="#">Manage Booking</a></li>
-											<li><a href="#">Baggage Information</a></li>
-											<li><a href="#">Travel Insurance</a></li>
-										</ul>
-									</section>
+						<!-- Links -->
+							<section class="widget links">
+								<h3>About Us</h3>
+								<ul class="style2">
+									<li><a href="#">About us </a></li>
+									<li><a href="#">Careers</a></li>
+									<li><a href="#">Media center </a></li>
+									<li><a href="#">Our people</a></li>
+									<li><a href="#">Our communities </a></li>
+								</ul>
+							</section>
 
-							</div>
-							<div class="col-3 col-6-medium col-12-small">
+					</div>
+					<div class="col-3 col-6-medium col-12-small">
 
-								<!-- Links -->
-									<section class="widget links">
-										<h3>Customer Support</h3>
-										<ul class="style2">
-											<li><a href="#">Contact Us</a></li>
-											<li><a href="#">FAQs</a></li>
-											<li><a href="#">Feedback</a></li>
-											<li><a href="#">Travel Alerts</a></li>
-											<li><a href="#">Accessibility</a></li>
-										</ul>
-									</section>
+						<!-- Links -->
+							<section class="widget links">
+								<h3>Help</h3>
+								<ul class="style2">
+									<li><a href="#">Help and contact</a></li>
+									<li><a href="#">Travel updates </a></li>
+									<li><a href="#">Special Assistance</a></li>
+									<li><a href="#">Frequently asked questions</a></li>
+									<li><a href="#">Loyalty</a></li>
+								</ul>
+							</section>
 
-							</div>
-							<div class="col-3 col-6-medium col-12-small">
+					</div>
+					<div class="col-3 col-6-medium col-12-small">
 
-								<!-- About Us -->
-									<section class="widget links">
-										<h3>About Us</h3>
-										<ul class="style2">
-											<li><a href="#">Our Story</a></li>
-											<li><a href="#">Our People</a></li>
-											<li><a href="#">Our Communities</a></li>
-											<li><a href="#">Our Mission</a></li>
-											<li><a href="#">Our Services</a></li>
-										</ul>
-									</section>
+						<!-- Links -->
+							<section class="widget links">
+								<h3>Book a flight</h3>
+								<ul class="style2">
+									<li><a href="#">Book</a></li>
+									<li><a href="#">Manage </a></li>
+									<li><a href="#">Before you fly</a></li>
+									<li><a href="#">Where we fly </a></li>
+									<li><a href="#">Experience</a></li>
+								</ul>
+							</section>
 
-							</div>
-							<div class="col-3 col-6-medium col-12-small">
+					</div>
+					<div class="col-3 col-6-medium col-12-small">
 
-								<!-- Contact -->
-									<section class="widget contact last">
-										<h3>Contact Us</h3>
-										<ul>
-											<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-											<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-											<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-											<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-											<li><a href="#" class="icon brands fa-pinterest"><span class="label">Pinterest</span></a></li>
-										</ul>
-										<p>1234 Aviation Way<br />
-										Nashville, TN 00000<br />
-										(800) 555-0000</p>
-									</section>
+						<!-- Contact -->
+							<section class="widget contact last">
+								<h3>Contact Us</h3>
+								<ul>
+									<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+									<li><a href="#" class="icon brands fa-pinterest"><span class="label">Pinterest</span></a></li>
+								</ul>
+								<p>4000 Edison Avenue, <br />
+									Sacramento, CA 95821<br />
+									Room E4<br />
+								(916) 971-7483</p>
+							</section>
 
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-12">
-								<div id="copyright">
-									<ul class="menu">
-										<li>&copy; Zephyr Airlines. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</footer>
+					</div>
 				</div>
+				<div class="row">
+					<div class="col-12">
+						<div id="copyright">
+							<ul class="menu">
+								<li>Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</footer>
 
 			</div>
 
