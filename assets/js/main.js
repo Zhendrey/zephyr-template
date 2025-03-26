@@ -66,9 +66,24 @@
 
 //PARIS (PARIJE)
 
-const reasons = document.querySelectorAll("li.reason");
+const reasons = document.querySelectorAll("li.reason__list");
+const titles = document.querySelectorAll(".reasons__list h3");
+const paragraphs = document.querySelectorAll(".reasons__list p");
 
-async function getData() {
-	const response = await fetch("../json/reasons.json");
-	const data = response;
-}
+
+// async function getData() {
+// 	try{
+//         const data = await fetch('../assets/json/reasons.json');
+//         const response = await data.json();
+//         return response;
+//     }catch(error){
+//         console.error('error', error.message);
+//     }
+// }
+
+// const data = await getData();
+
+
+// [...titles].forEach((title, index)=>{
+// 	title.textContent = data.reasons.name[index]
+// })
