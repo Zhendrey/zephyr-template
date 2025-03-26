@@ -62,3 +62,13 @@
 				});
 
 })(jQuery);
+
+
+//PARIS (PARIJE)
+
+const reasons = document.querySelectorAll("li.reason");
+
+async function getData() {
+	const response = await fetch("../json/reasons.json");
+	const data = response;
+}
