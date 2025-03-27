@@ -253,16 +253,21 @@ div.special-row > .col-4{
 .banner:not(:last-child){
 	margin-block-end: 1.5rem;
 }
+section.widget.last{
+	margin-block-end: 2rem;
+}
 
 /*PARIS*/
 
 .reasons__link{
 	opacity: 0;
-	transition-property: opacity;
-	transition-duration: 0.5s;
+	transform: translateY(50px);
+	transition-property: opacity, transform;
+	transition-duration: 0.5s, 1s;
 }
 .reasons__link.active{
 	opacity: 1;
+	transform: translateY(0);
 }
 .reasons__link:not(:last-child){
 	margin-block-end: 3.5rem;
@@ -2445,10 +2450,6 @@ input, select, textarea {
 			section, article {
 				clear: both;
 				margin-bottom: 3em !important;
-			}
-
-			section.last, article.last {
-				margin-bottom: 0 !important;
 			}
 
 		/* Image */
