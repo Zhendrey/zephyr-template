@@ -4,12 +4,11 @@
 <dict>
 	<key>HierarchyData</key>
 	<array>
-		<string>6C2B986A-2D0E-4C1D-8148-395A11B2C650</string>
-		<string>6F046ECB-BF80-4653-9749-3D3282394DB5</string>
+		<string>53DF91FA-7644-4D73-B029-295957B6F168</string>
 	</array>
 	<key>ProjectItems</key>
 	<dict>
-		<key>6C2B986A-2D0E-4C1D-8148-395A11B2C650</key>
+		<key>53DF91FA-7644-4D73-B029-295957B6F168</key>
 		<dict>
 			<key>ItemData</key>
 			<dict>
@@ -54,15 +53,6 @@
 			<string>zephyr-template</string>
 			<key>ItemType</key>
 			<string>FolderReference</string>
-		</dict>
-		<key>6F046ECB-BF80-4653-9749-3D3282394DB5</key>
-		<dict>
-			<key>ItemData</key>
-			<string>https://www.google.com/imgres?q=airplane&amp;imgurl=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2F3%2F36%2FUnited_Airlines_Boeing_777-200_Meulemans.jpg&amp;imgrefurl=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FAirplane&amp;docid=PLhAuV-FF9A1VM&amp;tbnid=nrj5LbF9_o8pZM&amp;vet=12ahUKEwigl4XDjZmMAxUOOTQIHWerLKoQM3oECBUQAA..i&amp;w=1024&amp;h=683&amp;hcb=2&amp;ved=2ahUKEwigl4XDjZmMAxUOOTQIHWerLKoQM3oECBUQAA</string>
-			<key>ItemName</key>
-			<string>imgres</string>
-			<key>ItemType</key>
-			<string>RemoteResource</string>
 		</dict>
 	</dict>
 	<key>com.barebones.DocumentFormatVersion</key>
