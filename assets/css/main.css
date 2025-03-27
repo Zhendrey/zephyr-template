@@ -264,9 +264,9 @@ section.widget.last{
 		font-size: 1.5rem;
 	}
 }
-.cities__row{
-	
-}
+/* header.tokyo{
+	transform: translateY(40px);
+} */
 .reasons__link{
 	opacity: 0;
 	transform: translateY(50px);
