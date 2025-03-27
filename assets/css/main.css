@@ -257,8 +257,16 @@ section.widget.last{
 	margin-block-end: 2rem;
 }
 
-/*PARIS*/
+/*CITIES*/
 
+@media (min-width: 1440px) {
+	.reasons__link p{
+		font-size: 1.5rem;
+	}
+}
+.cities__row{
+	
+}
 .reasons__link{
 	opacity: 0;
 	transform: translateY(50px);
@@ -1993,7 +2001,6 @@ input, select, textarea {
 
 	ol {
 		list-style: decimal;
-		padding-left: 1.25em;
 	}
 
 		ol li {

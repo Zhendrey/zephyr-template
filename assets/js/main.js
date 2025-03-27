@@ -100,5 +100,6 @@ Array.from(paragraphs).forEach((paragraph, index)=>{
 Array.from(images).forEach((image, index)=>{
 	console.log(index);
 	image.src = data[0].reasons[index].image
+	image.alt = data[0].reasons[index].name;
 })
 })();
