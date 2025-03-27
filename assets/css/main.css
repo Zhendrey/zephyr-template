@@ -256,6 +256,14 @@ div.special-row > .col-4{
 
 /*PARIS*/
 
+.reasons__link{
+	opacity: 0;
+	transition-property: opacity;
+	transition-duration: 0.5s;
+}
+.reasons__link.active{
+	opacity: 1;
+}
 .reasons__link:not(:last-child){
 	margin-block-end: 3.5rem;
 }
@@ -271,7 +279,7 @@ div.special-row > .col-4{
 .reasons__list{
 	list-style: none;
 }
-ol,ul{
+ol{
 	padding: 0;
 }
 

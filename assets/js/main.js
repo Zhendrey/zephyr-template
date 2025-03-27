@@ -66,11 +66,21 @@
 
 //PARIS (PARIJE)
 
-const reasons = document.querySelectorAll(".paris li.reason__list");
+const reasons = document.querySelectorAll(".reasons__link");
 const titles = document.querySelectorAll(".paris .reasons__link h3");
 const paragraphs = document.querySelectorAll(".paris .reasons__list p");
 const images = document.querySelectorAll(".paris .reasons__list img");
+const intersectionObserver = new IntersectionObserver((entries)=>{
+	entries.forEach(entry=>{
+		if(!entry.isIntersecting){
+			entry.target.classList.remove("active")
+		}else{
+			entry.target.classList.add("active")
+		}
+	})
+}, {threshold: 0.2})
 
+reasons.forEach(reason=>intersectionObserver.observe(reason))
 
 
 const getData = async () => {
