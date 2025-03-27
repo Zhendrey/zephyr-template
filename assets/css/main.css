@@ -64,6 +64,11 @@ h2{
 	transform: translateY(80px);
 }
 
+.reasons__link,
+.reasons__link h3{
+	color: white;
+}
+
 .whole-image{
 	width: 100%;
 	height: 100%;
@@ -245,6 +250,43 @@ div.special-row > .col-4{
 	.translateY-100{
 		transform: translateY(100px);
 	}
+.banner:not(:last-child){
+	margin-block-end: 1.5rem;
+}
+section.widget.last{
+	margin-block-end: 2rem;
+}
+
+/*PARIS*/
+
+.reasons__link{
+	opacity: 0;
+	transform: translateY(50px);
+	transition-property: opacity, transform;
+	transition-duration: 0.5s, 1s;
+}
+.reasons__link.active{
+	opacity: 1;
+	transform: translateY(0);
+}
+.reasons__link:not(:last-child){
+	margin-block-end: 3.5rem;
+}
+.reasosn__image{
+	max-width: 750px;
+	object-fit: cover;
+}
+.reasosn__image img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.reasons__list{
+	list-style: none;
+}
+ol{
+	padding: 0;
+}
 
 div#page-wrapper{
 	padding-inline: 15px;
@@ -2408,10 +2450,6 @@ input, select, textarea {
 			section, article {
 				clear: both;
 				margin-bottom: 3em !important;
-			}
-
-			section.last, article.last {
-				margin-bottom: 0 !important;
 			}
 
 		/* Image */
