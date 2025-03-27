@@ -250,6 +250,30 @@ div.special-row > .col-4{
 	.translateY-100{
 		transform: translateY(100px);
 	}
+.banner:not(:last-child){
+	margin-block-end: 1.5rem;
+}
+
+/*PARIS*/
+
+.reasons__link:not(:last-child){
+	margin-block-end: 3.5rem;
+}
+.reasosn__image{
+	max-width: 750px;
+	object-fit: cover;
+}
+.reasosn__image img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.reasons__list{
+	list-style: none;
+}
+ol,ul{
+	padding: 0;
+}
 
 div#page-wrapper{
 	padding-inline: 15px;

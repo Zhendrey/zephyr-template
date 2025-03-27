@@ -66,24 +66,29 @@
 
 //PARIS (PARIJE)
 
-const reasons = document.querySelectorAll("li.reason__list");
-const titles = document.querySelectorAll(".reasons__list h3");
-const paragraphs = document.querySelectorAll(".reasons__list p");
+const reasons = document.querySelectorAll(".paris li.reason__list");
+const titles = document.querySelectorAll(".paris .reasons__link h3");
+const paragraphs = document.querySelectorAll(".paris .reasons__list p");
+const images = document.querySelectorAll(".paris .reasons__list img");
 
 
-// async function getData() {
-// 	try{
-//         const data = await fetch('../assets/json/reasons.json');
-//         const response = await data.json();
-//         return response;
-//     }catch(error){
-//         console.error('error', error.message);
-//     }
-// }
 
-// const data = await getData();
+const getData = async () => {
+	const response = await fetch('../assets/json/reasons.json');
+	const data = await response.json();
+	return data;
+}
 
-
-// [...titles].forEach((title, index)=>{
-// 	title.textContent = data.reasons.name[index]
-// })
+(async () => {
+	const data = await getData();
+titles.forEach((title, index)=>{
+	title.textContent = `${index + 1}. ${data[0].reasons[index].name}`
+})
+Array.from(paragraphs).forEach((paragraph, index)=>{
+	paragraph.textContent = data[0].reasons[index].description
+})
+Array.from(images).forEach((image, index)=>{
+	console.log(index);
+	image.src = data[0].reasons[index].image
+})
+})();
