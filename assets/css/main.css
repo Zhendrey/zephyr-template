@@ -246,6 +246,13 @@ div.special-row > .col-4{
 		transform: translateY(100px);
 	}
 
+.reasons{
+	color: white;
+}
+.reasons h3{
+	color: white;
+}
+
 div#page-wrapper{
 	padding-inline: 15px;
 }
