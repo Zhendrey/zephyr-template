@@ -303,6 +303,11 @@ ol{
 	color: white;
 }
 
+.inner {
+	background-color: white;
+	display: block;
+}
+
 div#page-wrapper{
 	padding-inline: 15px;
 }
