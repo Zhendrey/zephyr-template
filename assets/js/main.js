@@ -62,3 +62,44 @@
 				});
 
 })(jQuery);
+
+
+//PARIS (PARIJE)
+
+const reasons = document.querySelectorAll(".reasons__link");
+const titles = document.querySelectorAll(".paris .reasons__link h3");
+const paragraphs = document.querySelectorAll(".paris .reasons__list p");
+const images = document.querySelectorAll(".paris .reasons__list img");
+const intersectionObserver = new IntersectionObserver((entries)=>{
+	entries.forEach(entry=>{
+		if(!entry.isIntersecting){
+			entry.target.classList.remove("active")
+		}else{
+			entry.target.classList.add("active")
+		}
+	})
+}, {threshold: 0.2})
+
+reasons.forEach(reason=>intersectionObserver.observe(reason))
+
+
+const getData = async () => {
+	const response = await fetch('../assets/json/reasons.json');
+	const data = await response.json();
+	return data;
+}
+
+(async () => {
+	const data = await getData();
+titles.forEach((title, index)=>{
+	title.textContent = `${index + 1}. ${data[0].reasons[index].name}`
+})
+Array.from(paragraphs).forEach((paragraph, index)=>{
+	paragraph.textContent = data[0].reasons[index].description
+})
+Array.from(images).forEach((image, index)=>{
+	console.log(index);
+	image.src = data[0].reasons[index].image
+	image.alt = data[0].reasons[index].name;
+})
+})();
