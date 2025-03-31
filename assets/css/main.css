@@ -156,13 +156,30 @@ div.row__content {
 /*FEATURES*/
 
 .destination{
-	transition-property: opacity, transform;
+	transition-property: opacity, transform, box-shadow;
 	transition-duration: 0.5s;
 	opacity: 0;
 }
+.destination img{
+	transition-property: box-shadow;
+	transition-property: 0.5s;
+	box-shadow: 0 0 0 0 none;
+	cursor: pointer;
+}
+.destination img:hover{
+	box-shadow: 0 -2px 5px 4px rgb(255, 255, 255);
+}
 .destination.active{
 	opacity: 1;
-	transform: translate3d(10px, 10px, 5px);
+	transform: translateY(5px) translateZ(5px);
+}
+.mission{
+	transition-property: opacity, transform, box-shadow;
+	transition-duration: 0.5s;
+	opacity: 0;
+}
+.mission.active{
+	opacity: 1;
 }
 
 .row__text {

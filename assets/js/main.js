@@ -83,6 +83,14 @@ const intersectionObserver = new IntersectionObserver((entries)=>{
 reasons.forEach(reason=>intersectionObserver.observe(reason))
 
 
+const antiDisappearObserver = new IntersectionObserver((entries)=>{
+	entries.forEach(entry=>{
+		if(entry.isIntersecting){
+			entry.target.classList.add("active")
+		}
+	})
+}, {threshold: 0.2}) 
+
 const getData = async () => {
 	const response = await fetch('../assets/json/reasons.json');
 	const data = await response.json();
@@ -107,7 +115,11 @@ Array.from(images).forEach((image, index)=>{
 //INDEX (HOME PAGE)
 
 const destinations = document.querySelectorAll(".destination");
+const mission = document.querySelector(".mission");
+const pageWrapper = document.getElementById("page-wrapper");
+
 
 [...destinations].forEach(destination => {
 	intersectionObserver.observe(destination)
 });
+antiDisappearObserver.observe(mission);
