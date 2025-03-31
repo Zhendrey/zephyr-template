@@ -114,12 +114,13 @@ Array.from(images).forEach((image, index)=>{
 
 //INDEX (HOME PAGE)
 
-const destinations = document.querySelectorAll(".destination");
+const cards = document.querySelectorAll(".card");
 const mission = document.querySelector(".mission");
 const pageWrapper = document.getElementById("page-wrapper");
 
 
-[...destinations].forEach(destination => {
+[...cards].forEach(destination => {
 	intersectionObserver.observe(destination)
 });
+
 antiDisappearObserver.observe(mission);

@@ -155,21 +155,21 @@ div.row__content {
 
 /*FEATURES*/
 
-.destination{
+.card{
 	transition-property: opacity, transform, box-shadow;
 	transition-duration: 0.5s;
 	opacity: 0;
 }
-.destination img{
+.card img{
 	transition-property: box-shadow;
 	transition-property: 0.5s;
 	box-shadow: 0 0 0 0 none;
 	cursor: pointer;
 }
-.destination img:hover{
+.card img:hover{
 	box-shadow: 0 -2px 5px 4px rgb(255, 255, 255);
 }
-.destination.active{
+.card.active{
 	opacity: 1;
 	transform: translateY(5px) translateZ(5px);
 }
