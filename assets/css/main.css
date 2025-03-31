@@ -83,6 +83,7 @@ h2{
 	font-style: normal;
 	text-decoration: none;
 }
+
 /*BANNER*/
 
 #banner{
@@ -153,6 +154,16 @@ div.row__content {
 
 
 /*FEATURES*/
+
+.destination{
+	transition-property: opacity, transform;
+	transition-duration: 0.5s;
+	opacity: 0;
+}
+.destination.active{
+	opacity: 1;
+	transform: translate3d(10px, 10px, 5px);
+}
 
 .row__text {
 	z-index: 2;
@@ -306,6 +317,12 @@ ol{
 .inner {
 	background-color: white;
 	display: block;
+}
+.inner p{
+	font-size: 1.7rem;
+}
+.inner__title:hover{
+	text-decoration: underline;
 }
 
 div#page-wrapper{

@@ -98,8 +98,16 @@ Array.from(paragraphs).forEach((paragraph, index)=>{
 	paragraph.textContent = data[0].reasons[index].description
 })
 Array.from(images).forEach((image, index)=>{
-	console.log(index);
 	image.src = data[0].reasons[index].image
 	image.alt = data[0].reasons[index].name;
 })
 })();
+
+
+//INDEX (HOME PAGE)
+
+const destinations = document.querySelectorAll(".destination");
+
+[...destinations].forEach(destination => {
+	intersectionObserver.observe(destination)
+});
