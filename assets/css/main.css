@@ -83,6 +83,7 @@ h2{
 	font-style: normal;
 	text-decoration: none;
 }
+
 /*BANNER*/
 
 #banner{
@@ -153,6 +154,33 @@ div.row__content {
 
 
 /*FEATURES*/
+
+.card{
+	transition-property: opacity, transform, box-shadow;
+	transition-duration: 0.5s;
+	opacity: 0;
+}
+.card img{
+	transition-property: box-shadow;
+	transition-property: 0.5s;
+	box-shadow: 0 0 0 0 none;
+	cursor: pointer;
+}
+.card img:hover{
+	box-shadow: 0 -2px 5px 4px rgb(255, 255, 255);
+}
+.card.active{
+	opacity: 1;
+	transform: translateY(5px) translateZ(5px);
+}
+.mission{
+	transition-property: opacity, transform, box-shadow;
+	transition-duration: 0.5s;
+	opacity: 0;
+}
+.mission.active{
+	opacity: 1;
+}
 
 .row__text {
 	z-index: 2;
@@ -301,6 +329,17 @@ ol{
 }
 .reasons h3{
 	color: white;
+}
+
+.inner {
+	background-color: white;
+	display: block;
+}
+.inner p{
+	font-size: 1.7rem;
+}
+.inner__title:hover{
+	text-decoration: underline;
 }
 
 div#page-wrapper{

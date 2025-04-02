@@ -83,6 +83,14 @@ const intersectionObserver = new IntersectionObserver((entries)=>{
 reasons.forEach(reason=>intersectionObserver.observe(reason))
 
 
+const antiDisappearObserver = new IntersectionObserver((entries)=>{
+	entries.forEach(entry=>{
+		if(entry.isIntersecting){
+			entry.target.classList.add("active")
+		}
+	})
+}, {threshold: 0.2}) 
+
 const getData = async () => {
 	const response = await fetch('../assets/json/reasons.json');
 	const data = await response.json();
@@ -98,8 +106,21 @@ Array.from(paragraphs).forEach((paragraph, index)=>{
 	paragraph.textContent = data[0].reasons[index].description
 })
 Array.from(images).forEach((image, index)=>{
-	console.log(index);
 	image.src = data[0].reasons[index].image
 	image.alt = data[0].reasons[index].name;
 })
 })();
+
+
+//INDEX (HOME PAGE)
+
+const cards = document.querySelectorAll(".card");
+const mission = document.querySelector(".mission");
+const pageWrapper = document.getElementById("page-wrapper");
+
+
+[...cards].forEach(destination => {
+	intersectionObserver.observe(destination)
+});
+
+antiDisappearObserver.observe(mission);
