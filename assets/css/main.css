@@ -2053,6 +2053,9 @@ input, select, textarea {
 			padding-left: 0.25em;
 		}
 
+section.widget ul.style2 li{
+	color: var(--offwhite);
+}
 /* Actions */
 
 	ul.actions {
