@@ -152,6 +152,11 @@ div.row__content {
 	font-style: italic;
 }
 
+.call-to-action__list{
+	display: grid;
+    gap: 12px;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+}
 
 /*FEATURES*/
 
