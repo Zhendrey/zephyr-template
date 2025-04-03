@@ -463,7 +463,7 @@ input, select, textarea {
 	}
 
 	a {
-		color: #220388;
+		color: var(--offwhite);
 		text-decoration: underline;
 	}
 
@@ -2441,10 +2441,6 @@ section.widget ul.style2 li{
 	#footer h3{
 		color: inherit;
 	}
-
-		#footer a {
-			color: inherit;
-		}
 
 	#copyright {
 		color: inherit;
