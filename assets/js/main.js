@@ -78,7 +78,7 @@ const intersectionObserver = new IntersectionObserver((entries)=>{
 			entry.target.classList.add("active")
 		}
 	})
-}, {threshold: 0.2})
+}, {threshold: 0.15})
 
 reasons.forEach(reason=>intersectionObserver.observe(reason))
 
@@ -89,7 +89,7 @@ const antiDisappearObserver = new IntersectionObserver((entries)=>{
 			entry.target.classList.add("active")
 		}
 	})
-}, {threshold: 0.2}) 
+}, {threshold: 0.15}) 
 
 const getData = async () => {
 	const response = await fetch('../assets/json/reasons.json');
