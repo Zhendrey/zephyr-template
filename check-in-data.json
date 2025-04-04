@@ -1,0 +1,352 @@
+{
+    "airlines": [
+      {
+        "airlineId": "AL001",
+        "name": "SkyWay Airlines",
+        "iataCode": "SK",
+        "icaoCode": "SKY",
+        "logo": "skyway_logo.png",
+        "contactNumber": "+1-800-123-4567",
+        "website": "https://www.skywayairlines.com"
+      },
+      {
+        "airlineId": "AL002",
+        "name": "OceanAir",
+        "iataCode": "OA",
+        "icaoCode": "OCN",
+        "logo": "oceanair_logo.png",
+        "contactNumber": "+1-800-987-6543",
+        "website": "https://www.oceanair.com"
+      }
+    ],
+    "airports": [
+      {
+        "airportId": "AP001",
+        "name": "John F. Kennedy International Airport",
+        "iataCode": "JFK",
+        "icaoCode": "KJFK",
+        "city": "New York",
+        "country": "United States",
+        "terminals": ["1", "2", "4", "5", "7", "8"],
+        "timezone": "America/New_York"
+      },
+      {
+        "airportId": "AP002",
+        "name": "Los Angeles International Airport",
+        "iataCode": "LAX",
+        "icaoCode": "KLAX",
+        "city": "Los Angeles",
+        "country": "United States",
+        "terminals": ["1", "2", "3", "4", "5", "6", "7", "8", "B", "TBIT"],
+        "timezone": "America/Los_Angeles"
+      },
+      {
+        "airportId": "AP003",
+        "name": "Heathrow Airport",
+        "iataCode": "LHR",
+        "icaoCode": "EGLL",
+        "city": "London",
+        "country": "United Kingdom",
+        "terminals": ["2", "3", "4", "5"],
+        "timezone": "Europe/London"
+      }
+    ],
+    "flights": [
+      {
+        "flightId": "FL001",
+        "flightNumber": "SK103",
+        "airlineId": "AL001",
+        "departureAirportId": "AP001",
+        "arrivalAirportId": "AP002",
+        "departureTerminal": "4",
+        "arrivalTerminal": "5",
+        "departureGate": "C12",
+        "arrivalGate": "B8",
+        "scheduledDeparture": "2025-04-05T08:30:00Z",
+        "scheduledArrival": "2025-04-05T11:45:00Z",
+        "estimatedDeparture": "2025-04-05T08:45:00Z",
+        "estimatedArrival": "2025-04-05T12:00:00Z",
+        "status": "On Time",
+        "aircraftType": "Boeing 787-9",
+        "aircraftRegistration": "N123SK"
+      },
+      {
+        "flightId": "FL002",
+        "flightNumber": "OA456",
+        "airlineId": "AL002",
+        "departureAirportId": "AP002",
+        "arrivalAirportId": "AP003",
+        "departureTerminal": "TBIT",
+        "arrivalTerminal": "5",
+        "departureGate": "134",
+        "arrivalGate": "A21",
+        "scheduledDeparture": "2025-04-05T15:20:00Z",
+        "scheduledArrival": "2025-04-06T09:35:00Z",
+        "estimatedDeparture": "2025-04-05T15:20:00Z",
+        "estimatedArrival": "2025-04-06T09:35:00Z",
+        "status": "On Time",
+        "aircraftType": "Airbus A350-900",
+        "aircraftRegistration": "G-OBCA"
+      }
+    ],
+    "passengers": [
+      {
+        "passengerId": "P0001",
+        "title": "Mr",
+        "firstName": "John",
+        "lastName": "Smith",
+        "dateOfBirth": "1985-06-15",
+        "nationality": "United States",
+        "passportNumber": "US123456789",
+        "passportExpiry": "2030-05-20",
+        "email": "john.smith@email.com",
+        "phone": "+1-212-555-1234",
+        "frequentFlyerNumber": "SK12345678",
+        "frequentFlyerTier": "Gold",
+        "specialAssistance": null,
+        "dietaryRequirements": null
+      },
+      {
+        "passengerId": "P0002",
+        "title": "Ms",
+        "firstName": "Emma",
+        "lastName": "Johnson",
+        "dateOfBirth": "1990-09-23",
+        "nationality": "United Kingdom",
+        "passportNumber": "GBR987654321",
+        "passportExpiry": "2028-11-15",
+        "email": "emma.johnson@email.com",
+        "phone": "+44-20-7123-4567",
+        "frequentFlyerNumber": "OA87654321",
+        "frequentFlyerTier": "Silver",
+        "specialAssistance": "Wheelchair",
+        "dietaryRequirements": "Vegetarian"
+      }
+    ],
+    "bookings": [
+      {
+        "bookingId": "B0001",
+        "bookingReference": "XYZABC",
+        "bookingDate": "2025-01-15T14:23:45Z",
+        "travelAgentId": null,
+        "status": "Confirmed",
+        "totalAmount": 1250.50,
+        "currency": "USD",
+        "contactEmail": "john.smith@email.com",
+        "contactPhone": "+1-212-555-1234",
+        "passengers": ["P0001"],
+        "flights": ["FL001"]
+      },
+      {
+        "bookingId": "B0002",
+        "bookingReference": "LMNPQR",
+        "bookingDate": "2025-02-20T09:12:33Z",
+        "travelAgentId": "TA123",
+        "status": "Confirmed",
+        "totalAmount": 2450.75,
+        "currency": "GBP",
+        "contactEmail": "emma.johnson@email.com",
+        "contactPhone": "+44-20-7123-4567",
+        "passengers": ["P0002"],
+        "flights": ["FL002"]
+      }
+    ],
+    "checkins": [
+      {
+        "checkinId": "CI0001",
+        "bookingId": "B0001",
+        "passengerId": "P0001",
+        "flightId": "FL001",
+        "checkinTime": "2025-04-04T20:15:22Z",
+        "checkinMethod": "Web",
+        "status": "Completed",
+        "seatNumber": "12A",
+        "boardingPassIssued": true,
+        "boardingPassType": "Mobile",
+        "baggageDropped": false,
+        "securityScreeningComplete": false
+      },
+      {
+        "checkinId": "CI0002",
+        "bookingId": "B0002",
+        "passengerId": "P0002",
+        "flightId": "FL002",
+        "checkinTime": "2025-04-05T11:05:47Z",
+        "checkinMethod": "Airport Kiosk",
+        "status": "Completed",
+        "seatNumber": "23F",
+        "boardingPassIssued": true,
+        "boardingPassType": "Paper",
+        "baggageDropped": true,
+        "securityScreeningComplete": true
+      }
+    ],
+    "baggage": [
+      {
+        "baggageId": "BG0001",
+        "checkinId": "CI0002",
+        "passengerId": "P0002",
+        "flightId": "FL002",
+        "tags": ["LMNPQR-P0002-01"],
+        "weight": 23.5,
+        "weightUnit": "kg",
+        "category": "Checked",
+        "status": "Checked In",
+        "location": "LAX-SORTING",
+        "specialHandling": null
+      }
+    ],
+    "seats": [
+      {
+        "seatId": "S0001",
+        "flightId": "FL001",
+        "seatNumber": "12A",
+        "cabin": "Economy",
+        "features": ["Window", "Standard Legroom"],
+        "price": 0,
+        "currency": "USD",
+        "available": false,
+        "occupiedBy": "P0001"
+      },
+      {
+        "seatId": "S0002",
+        "flightId": "FL001",
+        "seatNumber": "12B",
+        "cabin": "Economy",
+        "features": ["Middle", "Standard Legroom"],
+        "price": 0,
+        "currency": "USD",
+        "available": true,
+        "occupiedBy": null
+      },
+      {
+        "seatId": "S0003",
+        "flightId": "FL002",
+        "seatNumber": "23F",
+        "cabin": "Economy Premium",
+        "features": ["Window", "Extra Legroom"],
+        "price": 45,
+        "currency": "GBP",
+        "available": false,
+        "occupiedBy": "P0002"
+      }
+    ],
+    "boardingPasses": [
+      {
+        "boardingPassId": "BP0001",
+        "checkinId": "CI0001",
+        "passengerId": "P0001",
+        "flightId": "FL001",
+        "seatId": "S0001",
+        "issueTime": "2025-04-04T20:15:22Z",
+        "barcodeData": "M1SMITH/JOHN EXYZABCSK 103Y04APR25JFKLAXSK12A",
+        "boardingGroup": "3",
+        "boardingTime": "2025-04-05T07:50:00Z",
+        "boardingStatus": "Not Boarded"
+      },
+      {
+        "boardingPassId": "BP0002",
+        "checkinId": "CI0002",
+        "passengerId": "P0002",
+        "flightId": "FL002",
+        "seatId": "S0003",
+        "issueTime": "2025-04-05T11:05:47Z",
+        "barcodeData": "M1JOHNSON/EMMA ELMNPQROA 456Y05APR25LAXLHROA23F",
+        "boardingGroup": "2",
+        "boardingTime": "2025-04-05T14:40:00Z",
+        "boardingStatus": "Not Boarded"
+      }
+    ],
+    "securityCheckpoints": [
+      {
+        "checkpointId": "SC001",
+        "airportId": "AP001",
+        "terminal": "4",
+        "name": "Terminal 4 Main Security",
+        "location": "Level 2, after check-in area",
+        "currentWaitTime": 15,
+        "status": "Open"
+      },
+      {
+        "checkpointId": "SC002",
+        "airportId": "AP002",
+        "terminal": "TBIT",
+        "name": "TBIT Main Security",
+        "location": "Level 3, north side",
+        "currentWaitTime": 25,
+        "status": "Open"
+      }
+    ],
+    "gates": [
+      {
+        "gateId": "G001",
+        "airportId": "AP001",
+        "terminal": "4",
+        "gateNumber": "C12",
+        "status": "Open",
+        "currentFlight": "FL001"
+      },
+      {
+        "gateId": "G002",
+        "airportId": "AP002",
+        "terminal": "TBIT",
+        "gateNumber": "134",
+        "status": "Open",
+        "currentFlight": "FL002"
+      }
+    ],
+    "crewMembers": [
+      {
+        "crewId": "CR001",
+        "employeeNumber": "12345",
+        "firstName": "Robert",
+        "lastName": "Williams",
+        "position": "Captain",
+        "airlineId": "AL001",
+        "baseAirport": "AP001"
+      },
+      {
+        "crewId": "CR002",
+        "employeeNumber": "23456",
+        "firstName": "Sarah",
+        "lastName": "Chen",
+        "position": "Flight Attendant",
+        "airlineId": "AL002",
+        "baseAirport": "AP002"
+      }
+    ],
+    "flightCrew": [
+      {
+        "flightCrewId": "FC001",
+        "flightId": "FL001",
+        "crewId": "CR001",
+        "role": "Captain",
+        "dutyStartTime": "2025-04-05T06:30:00Z",
+        "dutyEndTime": "2025-04-05T13:45:00Z"
+      }
+    ],
+    "auditLog": [
+      {
+        "logId": "LOG0001",
+        "timestamp": "2025-04-04T20:15:22Z",
+        "userId": "P0001",
+        "userType": "Passenger",
+        "actionType": "Check-in",
+        "entityType": "Boarding Pass",
+        "entityId": "BP0001",
+        "ipAddress": "192.168.1.100",
+        "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X)"
+      },
+      {
+        "logId": "LOG0002",
+        "timestamp": "2025-04-05T11:05:47Z",
+        "userId": "KIOSK12",
+        "userType": "System",
+        "actionType": "Check-in",
+        "entityType": "Boarding Pass",
+        "entityId": "BP0002",
+        "ipAddress": "10.24.35.67",
+        "userAgent": "AirportKiosk/2.3"
+      }
+    ]
+  }
