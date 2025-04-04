@@ -347,6 +347,11 @@ ol{
 	text-decoration: underline;
 }
 
+
+.stay__image {
+	width: 626px;
+}
+
 div#page-wrapper{
 	padding-inline: 15px;
 }
