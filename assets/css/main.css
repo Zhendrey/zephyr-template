@@ -2413,7 +2413,6 @@ section.widget ul.style2 li{
 
 		#banner .button {
 			width: 100%;
-			margin-bottom: 0.5em;
 		}
 
 			#banner .button.icon:before {
@@ -2987,10 +2986,6 @@ section.widget ul.style2 li{
 
 				#banner ul {
 					margin: 0;
-				}
-
-				#banner .button {
-					margin: 0 0 1em 0;
 				}
 
 		/* Content */
