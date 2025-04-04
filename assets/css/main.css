@@ -349,7 +349,7 @@ ol{
 
 
 .stay__image {
-	width: 626px;
+	max-width: 626px;
 }
 
 div#page-wrapper{
