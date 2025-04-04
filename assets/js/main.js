@@ -138,13 +138,20 @@ airlinesData.prototype = function() {
     
 		flights: [
 			{
-				id: 1111, cNum: 'ABCDED',timeToCheckIn:true,currentSegment:0,
+				id: 1111, 
+				cNum: 'ABCDED',
+				timeToCheckIn:true,
+				currentSegment:0,
 				segments: [
 					{ from: 'SEA', to: 'BOS', departDate: '6/1/2012', time: '5:00PM', flightNum: '111', seat: '5A', gate: 'C10' },
 					{ from: 'BOS', to: 'SEA', departDate: '6/11/2012', time: '4:00PM', flightNum: '122', seat: '5D', gate: 'A1' }
 				]
-			},{
-				id: 1112, cNum: 'DSLEMS', timeToCheckIn: false,currentSegment:0,
+			},
+			{
+				id: 1112, 
+				cNum: 'DSLEMS', 
+				timeToCheckIn: false,
+				currentSegment:0,
 				segments: [
 					{ from: 'SEA', to: 'SAN', departDate: '6/13/2012', time: '5:00PM', flightNum: '113', seat: '5A', gate: 'D10' },
 					{ from: 'SAN', to: 'SEA', departDate: '6/17/2012', time: '4:00PM', flightNum: '124', seat: '5D', gate: 'B1' }
