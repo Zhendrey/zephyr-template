@@ -123,6 +123,6 @@ const pageWrapper = document.getElementById("page-wrapper");
 	intersectionObserver.observe(destination)
 });
 
-antiDisappearObserver.observe(mission);
+mission ? antiDisappearObserver.observe(mission) : ''
 
 
