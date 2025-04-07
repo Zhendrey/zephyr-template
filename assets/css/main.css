@@ -351,9 +351,17 @@ ol{
 	text-decoration: underline;
 }
 
-
 .stay__image {
 	max-width: 626px;
+}
+
+.call-to-action__link{
+	display: flex;
+	align-items: center;
+}
+.booking__logo{
+	width: 30px;
+	height: 30px;
 }
 
 div#page-wrapper{
