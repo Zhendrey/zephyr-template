@@ -301,9 +301,6 @@ section.widget.last{
 		font-size: 1.5rem;
 	}
 }
-/* header.tokyo{
-	transform: translateY(40px);
-} */
 .reasons__link{
 	opacity: 0;
 	transform: translateY(50px);
@@ -364,6 +361,9 @@ ol{
 	height: 30px;
 }
 
+.cities-banner{
+	margin-bottom: 2rem;
+}
 
 /*FORM*/
 
