@@ -17,7 +17,7 @@
 					<header id="header" class="header container">
 				
 						<!-- Logo -->
-							<a href="#" class="header__logo" id="logo">
+							<a href="index.html" class="header__logo" id="logo">
 								<img src="./images/Zephyr-logo.svg" alt="Zephyr logo-1">
 							</a>
 
@@ -35,11 +35,53 @@
 				</div>
 
 			<!-- Banner -->
+
 				<div id="banner-wrapper">
 					<div id="banner" class="box container">
 						<div class="row">
 							<div class="col-7 col-12-medium">
-								<h2 class="title">Welcome to <em>Our Check-In Form</em></h2>
+								<h2 class="title">Welcome to <em>Booking form</em></h2>
+								<!-- Form. Insparation from: kayak.com -->
+								<form action="#" method="get" class="form">
+									<fieldset>
+										<legend>Please, take your time to fill out this short form.</legend>
+										<section class="form__group buttons">
+											<label for="radio">
+												Round-trip
+												<input name="radio" type="radio" checked>
+											</label>
+											<label for="radio">
+												One-way
+												<input name="radio" type="radio" checked>
+											</label>
+										</section>
+										<section class="form__group direction">
+											<label for="direction">
+												<input placeholder="From?" class="direction-from" name="from" type="text">
+											</label>
+											<button type="button" class="reverse__image">
+												<img src="images/arrow.png" alt="arrow" class="reverse__image--arrow">
+											</button>
+											<label for="direction">
+												<input placeholder="To?" class="direction-to" name="to" type="text">
+											</label>
+										</section>
+										<section class="form__group dates">
+											<label for="dates">
+												<input placeholder="Departure date" class="departure-date" name="departure-date" type="date">
+											</label>
+											<label for="dates">
+												<input placeholder="Return date" class="return-date" name="return-date" type="date">
+											</label>
+										</section>
+										<section class="form__group passanger">
+											<button type="button" class="passanger__button">
+												<span>1 adult</span><span>Economy</span><span>0 bags</span>
+											</button>
+										</section>
+										<button type="submit" class="form__group search">Search</button>
+									</fieldset>
+								</form>
 							</div>
 						</div>
 					</div>
