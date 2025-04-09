@@ -45,41 +45,39 @@
 								<form action="#" method="get" class="form">
 									<fieldset>
 										<legend>Please, take your time to fill out this short form.</legend>
-										<section class="form__group buttons">
-											<label for="radio">
-												Round-trip
-												<input name="radio" type="radio" checked>
-											</label>
-											<label for="radio">
-												One-way
-												<input name="radio" type="radio" checked>
-											</label>
+										<section class="form__group select">
+											<select name="trip" id="trip">
+												<option selected value="Round-trip">Round-trip</option>
+												<option value="One-way">One-way</option>
+											</select>
 										</section>
-										<section class="form__group direction">
-											<label for="direction">
-												<input placeholder="From?" class="direction-from" name="from" type="text">
-											</label>
-											<button type="button" class="reverse__image">
-												<img src="images/arrow.png" alt="arrow" class="reverse__image--arrow">
+										<section class="form__body">
+											<div class="form__group direction">
+												<label for="direction">
+													<input placeholder="From?" class="direction-from" name="from" type="text">
+												</label>
+												<button type="button" class="reverse__image">
+													<svg viewBox="0 0 200 200" width="1.25em" height="1.25em" xmlns="http://www.w3.org/2000/svg" class="z8m1-icon" role="presentation"><path d="M56.238 154.801c-25.271-30.326-30.335-33.201-25-39.603l25-30l11.523 9.603L53.013 112.5H120v15H53.013l14.749 17.699l-11.524 9.602zm86.524-40l-11.523-9.603L145.987 87.5H80v-15h65.987l-14.749-17.699l11.523-9.603l25 30c5.335 6.403.272 9.278-24.999 39.603z"></path></svg>
+												</button>
+												<label for="direction">
+													<input placeholder="To?" class="direction-to" name="to" type="text">
+												</label>
+											</div>
+											<div class="form__group dates">
+												<label for="dates">
+													<input placeholder="Departure date" class="departure-date" name="departure-date" type="date">
+												</label>
+												<label for="dates">
+													<input placeholder="Return date" class="return-date" name="return-date" type="date">
+												</label>
+											</div>
+											<div class="form__group passanger">
+												<span type="button" class="passanger__button">1 adult, Economy, 0 bag</span>
+											</div>
+											<button type="submit" class="form__group search">
+												Search
 											</button>
-											<label for="direction">
-												<input placeholder="To?" class="direction-to" name="to" type="text">
-											</label>
 										</section>
-										<section class="form__group dates">
-											<label for="dates">
-												<input placeholder="Departure date" class="departure-date" name="departure-date" type="date">
-											</label>
-											<label for="dates">
-												<input placeholder="Return date" class="return-date" name="return-date" type="date">
-											</label>
-										</section>
-										<section class="form__group passanger">
-											<button type="button" class="passanger__button">
-												<span>1 adult</span><span>Economy</span><span>0 bags</span>
-											</button>
-										</section>
-										<button type="submit" class="form__group search">Search</button>
 									</fieldset>
 								</form>
 							</div>
