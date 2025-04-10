@@ -1,0 +1,804 @@
+[
+  {
+    "pagination": {
+      "limit": 100,
+      "offset": 0,
+      "count": 20,
+      "total": 329953
+    },
+    "data": [
+      {
+        "flight_date": "2025-04-11",
+        "flight_status": "scheduled",
+        "departure": {
+          "airport": "John F. Kennedy International Airport",
+          "timezone": "America/New_York",
+          "iata": "JFK",
+          "icao": "KJFK",
+          "terminal": "4",
+          "gate": "B20",
+          "delay": null,
+          "scheduled": "2025-04-11T19:05:00+00:00",
+          "estimated": "2025-04-11T19:05:00+00:00",
+          "actual": null,
+          "estimated_runway": null,
+          "actual_runway": null
+        },
+        "arrival": {
+          "airport": "Heathrow Airport",
+          "timezone": "Europe/London",
+          "iata": "LHR",
+          "icao": "EGLL",
+          "terminal": "5",
+          "gate": "A10",
+          "baggage": "5",
+          "scheduled": "2025-04-12T07:10:00+00:00",
+          "delay": null,
+          "estimated": "2025-04-12T07:10:00+00:00",
+          "actual": null,
+          "estimated_runway": null,
+          "actual_runway": null
+        },
+        "airline": {
+          "name": "British Airways",
+          "iata": "BA",
+          "icao": "BAW"
+        },
+        "flight": {
+          "number": "112",
+          "iata": "BA112",
+          "icao": "BAW112",
+          "codeshared": null
+        },
+        "aircraft": {
+          "registration": "G-XWBA",
+          "iata": "B77W",
+          "icao": "B77W",
+          "model": "Boeing 777-300ER"
+        },
+        "live": null
+      },
+      {
+        "flight_date": "2025-04-11",
+        "flight_status": "active",
+        "departure": {
+          "airport": "Los Angeles International Airport",
+          "timezone": "America/Los_Angeles",
+          "iata": "LAX",
+          "icao": "KLAX",
+          "terminal": "B",
+          "gate": "55",
+          "delay": 15,
+          "scheduled": "2025-04-11T08:30:00+00:00",
+          "estimated": "2025-04-11T08:45:00+00:00",
+          "actual": "2025-04-11T08:45:00+00:00",
+          "estimated_runway": "2025-04-11T08:52:00+00:00",
+          "actual_runway": "2025-04-11T08:52:00+00:00"
+        },
+        "arrival": {
+          "airport": "San Francisco International Airport",
+          "timezone": "America/Los_Angeles",
+          "iata": "SFO",
+          "icao": "KSFO",
+          "terminal": "1",
+          "gate": "B27",
+          "baggage": "3",
+          "scheduled": "2025-04-11T10:10:00+00:00",
+          "delay": null,
+          "estimated": "2025-04-11T10:25:00+00:00",
+          "actual": null,
+          "estimated_runway": null,
+          "actual_runway": null
+        },
+        "airline": {
+          "name": "United Airlines",
+          "iata": "UA",
+          "icao": "UAL"
+        },
+        "flight": {
+          "number": "337",
+          "iata": "UA337",
+          "icao": "UAL337",
+          "codeshared": null
+        },
+        "aircraft": {
+          "registration": "N14102",
+          "iata": "A320",
+          "icao": "A320",
+          "model": "Airbus A320-200"
+        },
+        "live": {
+          "updated": "2025-04-11T09:15:00+00:00",
+          "latitude": 36.9878,
+          "longitude": -121.5683,
+          "altitude": 34000,
+          "direction": 315,
+          "speed_horizontal": 540,
+          "speed_vertical": 0,
+          "is_ground": false
+        }
+      },
+      {
+        "flight_date": "2025-04-11",
+        "flight_status": "landed",
+        "departure": {
+          "airport": "Dubai International Airport",
+          "timezone": "Asia/Dubai",
+          "iata": "DXB",
+          "icao": "OMDB",
+          "terminal": "3",
+          "gate": "A24",
+          "delay": null,
+          "scheduled": "2025-04-11T02:30:00+00:00",
+          "estimated": "2025-04-11T02:30:00+00:00",
+          "actual": "2025-04-11T02:35:00+00:00",
+          "estimated_runway": "2025-04-11T02:35:00+00:00",
+          "actual_runway": "2025-04-11T02:35:00+00:00"
+        },
+        "arrival": {
+          "airport": "Indira Gandhi International Airport",
+          "timezone": "Asia/Kolkata",
+          "iata": "DEL",
+          "icao": "VIDP",
+          "terminal": "3",
+          "gate": "12",
+          "baggage": "5",
+          "scheduled": "2025-04-11T07:10:00+00:00",
+          "delay": 5,
+          "estimated": "2025-04-11T07:15:00+00:00",
+          "actual": "2025-04-11T07:12:00+00:00",
+          "estimated_runway": "2025-04-11T07:05:00+00:00",
+          "actual_runway": "2025-04-11T07:05:00+00:00"
+        },
+        "airline": {
+          "name": "Emirates",
+          "iata": "EK",
+          "icao": "UAE"
+        },
+        "flight": {
+          "number": "510",
+          "iata": "EK510",
+          "icao": "UAE510",
+          "codeshared": null
+        },
+        "aircraft": {
+          "registration": "A6-EGP",
+          "iata": "B77W",
+          "icao": "B77W",
+          "model": "Boeing 777-300ER"
+        },
+        "live": null
+      },
+      {
+        "flight_date": "2025-04-11",
+        "flight_status": "scheduled",
+        "departure": {
+          "airport": "Singapore Changi Airport",
+          "timezone": "Asia/Singapore",
+          "iata": "SIN",
+          "icao": "WSSS",
+          "terminal": "3",
+          "gate": "A16",
+          "delay": null,
+          "scheduled": "2025-04-11T23:55:00+00:00",
+          "estimated": "2025-04-11T23:55:00+00:00",
+          "actual": null,
+          "estimated_runway": null,
+          "actual_runway": null
+        },
+        "arrival": {
+          "airport": "Sydney Airport",
+          "timezone": "Australia/Sydney",
+          "iata": "SYD",
+          "icao": "YSSY",
+          "terminal": "1",
+          "gate": "51",
+          "baggage": "14",
+          "scheduled": "2025-04-12T10:25:00+00:00",
+          "delay": null,
+          "estimated": "2025-04-12T10:25:00+00:00",
+          "actual": null,
+          "estimated_runway": null,
+          "actual_runway": null
+        },
+        "airline": {
+          "name": "Singapore Airlines",
+          "iata": "SQ",
+          "icao": "SIA"
+        },
+        "flight": {
+          "number": "231",
+          "iata": "SQ231",
+          "icao": "SIA231",
+          "codeshared": null
+        },
+        "aircraft": {
+          "registration": "9V-SKQ",
+          "iata": "A388",
+          "icao": "A388",
+          "model": "Airbus A380-800"
+        },
+        "live": null
+      },
+      {
+        "flight_date": "2025-04-11",
+        "flight_status": "scheduled",
+        "departure": {
+          "airport": "Frankfurt Airport",
+          "timezone": "Europe/Berlin",
+          "iata": "FRA",
+          "icao": "EDDF",
+          "terminal": "1",
+          "gate": "Z23",
+          "delay": null,
+          "scheduled": "2025-04-11T13:45:00+00:00",
+          "estimated": "2025-04-11T13:45:00+00:00",
+          "actual": null,
+          "estimated_runway": null,
+          "actual_runway": null
+        },
+        "arrival": {
+          "airport": "Tokyo Haneda Airport",
+          "timezone": "Asia/Tokyo",
+          "iata": "HND",
+          "icao": "RJTT",
+          "terminal": "3",
+          "gate": "142",
+          "baggage": "7",
+          "scheduled": "2025-04-12T08:30:00+00:00",
+          "delay": null,
+          "estimated": "2025-04-12T08:30:00+00:00",
+          "actual": null,
+          "estimated_runway": null,
+          "actual_runway": null
+        },
+        "airline": {
+          "name": "Lufthansa",
+          "iata": "LH",
+          "icao": "DLH"
+        },
+        "flight": {
+          "number": "716",
+          "iata": "LH716",
+          "icao": "DLH716",
+          "codeshared": null
+        },
+        "aircraft": {
+          "registration": "D-AIHK",
+          "iata": "A346",
+          "icao": "A346",
+          "model": "Airbus A340-600"
+        },
+        "live": null
+      },
+      {
+        "flight_date": "2025-04-11",
+        "flight_status": "delayed",
+        "departure": {
+          "airport": "Hartsfield-Jackson Atlanta International Airport",
+          "timezone": "America/New_York",
+          "iata": "ATL",
+          "icao": "KATL",
+          "terminal": "S",
+          "gate": "B7",
+          "delay": 45,
+          "scheduled": "2025-04-11T08:20:00+00:00",
+          "estimated": "2025-04-11T09:05:00+00:00",
+          "actual": null,
+          "estimated_runway": null,
+          "actual_runway": null
+        },
+        "arrival": {
+          "airport": "Miami International Airport",
+          "timezone": "America/New_York",
+          "iata": "MIA",
+          "icao": "KMIA",
+          "terminal": "N",
+          "gate": "D21",
+          "baggage": "D4",
+          "scheduled": "2025-04-11T10:10:00+00:00",
+          "delay": 45,
+          "estimated": "2025-04-11T10:55:00+00:00",
+          "actual": null,
+          "estimated_runway": null,
+          "actual_runway": null
+        },
+        "airline": {
+          "name": "Delta Air Lines",
+          "iata": "DL",
+          "icao": "DAL"
+        },
+        "flight": {
+          "number": "1855",
+          "iata": "DL1855",
+          "icao": "DAL1855",
+          "codeshared": null
+        },
+        "aircraft": {
+          "registration": "N917DX",
+          "iata": "B739",
+          "icao": "B739",
+          "model": "Boeing 737-900"
+        },
+        "live": null
+      },
+      {
+        "flight_date": "2025-04-11",
+        "flight_status": "active",
+        "departure": {
+          "airport": "Paris Charles de Gaulle Airport",
+          "timezone": "Europe/Paris",
+          "iata": "CDG",
+          "icao": "LFPG",
+          "terminal": "2E",
+          "gate": "K41",
+          "delay": 12,
+          "scheduled": "2025-04-11T10:20:00+00:00",
+          "estimated": "2025-04-11T10:32:00+00:00",
+          "actual": "2025-04-11T10:32:00+00:00",
+          "estimated_runway": "2025-04-11T10:45:00+00:00",
+          "actual_runway": "2025-04-11T10:45:00+00:00"
+        },
+        "arrival": {
+          "airport": "Amsterdam Airport Schiphol",
+          "timezone": "Europe/Amsterdam",
+          "iata": "AMS",
+          "icao": "EHAM",
+          "terminal": "2",
+          "gate": "D57",
+          "baggage": "10",
+          "scheduled": "2025-04-11T11:45:00+00:00",
+          "delay": 15,
+          "estimated": "2025-04-11T12:00:00+00:00",
+          "actual": null,
+          "estimated_runway": null,
+          "actual_runway": null
+        },
+        "airline": {
+          "name": "Air France",
+          "iata": "AF",
+          "icao": "AFR"
+        },
+        "flight": {
+          "number": "1240",
+          "iata": "AF1240",
+          "icao": "AFR1240",
+          "codeshared": null
+        },
+        "aircraft": {
+          "registration": "F-GKXL",
+          "iata": "A320",
+          "icao": "A320",
+          "model": "Airbus A320-200"
+        },
+        "live": {
+          "updated": "2025-04-11T11:15:00+00:00",
+          "latitude": 50.9127,
+          "longitude": 3.4509,
+          "altitude": 29000,
+          "direction": 42,
+          "speed_horizontal": 480,
+          "speed_vertical": 0,
+          "is_ground": false
+        }
+      },
+      {
+        "flight_date": "2025-04-11",
+        "flight_status": "scheduled",
+        "departure": {
+          "airport": "Beijing Capital International Airport",
+          "timezone": "Asia/Shanghai",
+          "iata": "PEK",
+          "icao": "ZBAA",
+          "terminal": "3",
+          "gate": "E28",
+          "delay": null,
+          "scheduled": "2025-04-11T18:50:00+00:00",
+          "estimated": "2025-04-11T18:50:00+00:00",
+          "actual": null,
+          "estimated_runway": null,
+          "actual_runway": null
+        },
+        "arrival": {
+          "airport": "Hong Kong International Airport",
+          "timezone": "Asia/Hong_Kong",
+          "iata": "HKG",
+          "icao": "VHHH",
+          "terminal": "1",
+          "gate": "40",
+          "baggage": "4",
+          "scheduled": "2025-04-11T22:40:00+00:00",
+          "delay": null,
+          "estimated": "2025-04-11T22:40:00+00:00",
+          "actual": null,
+          "estimated_runway": null,
+          "actual_runway": null
+        },
+        "airline": {
+          "name": "Air China",
+          "iata": "CA",
+          "icao": "CCA"
+        },
+        "flight": {
+          "number": "109",
+          "iata": "CA109",
+          "icao": "CCA109",
+          "codeshared": null
+        },
+        "aircraft": {
+          "registration": "B-1368",
+          "iata": "A333",
+          "icao": "A333",
+          "model": "Airbus A330-300"
+        },
+        "live": null
+      },
+      {
+        "flight_date": "2025-04-11",
+        "flight_status": "landed",
+        "departure": {
+          "airport": "Istanbul Airport",
+          "timezone": "Europe/Istanbul",
+          "iata": "IST",
+          "icao": "LTFM",
+          "terminal": "I",
+          "gate": "310",
+          "delay": null,
+          "scheduled": "2025-04-11T02:05:00+00:00",
+          "estimated": "2025-04-11T02:05:00+00:00",
+          "actual": "2025-04-11T02:12:00+00:00",
+          "estimated_runway": "2025-04-11T02:12:00+00:00",
+          "actual_runway": "2025-04-11T02:12:00+00:00"
+        },
+        "arrival": {
+          "airport": "Cairo International Airport",
+          "timezone": "Africa/Cairo",
+          "iata": "CAI",
+          "icao": "HECA",
+          "terminal": "3",
+          "gate": "F8",
+          "baggage": "9",
+          "scheduled": "2025-04-11T03:45:00+00:00",
+          "delay": 10,
+          "estimated": "2025-04-11T03:55:00+00:00",
+          "actual": "2025-04-11T03:52:00+00:00",
+          "estimated_runway": "2025-04-11T03:47:00+00:00",
+          "actual_runway": "2025-04-11T03:47:00+00:00"
+        },
+        "airline": {
+          "name": "Turkish Airlines",
+          "iata": "TK",
+          "icao": "THY"
+        },
+        "flight": {
+          "number": "690",
+          "iata": "TK690",
+          "icao": "THY690",
+          "codeshared": null
+        },
+        "aircraft": {
+          "registration": "TC-JJL",
+          "iata": "B77W",
+          "icao": "B77W",
+          "model": "Boeing 777-300ER"
+        },
+        "live": null
+      },
+      {
+        "flight_date": "2025-04-11",
+        "flight_status": "scheduled",
+        "departure": {
+          "airport": "Dallas/Fort Worth International Airport",
+          "timezone": "America/Chicago",
+          "iata": "DFW",
+          "icao": "KDFW",
+          "terminal": "D",
+          "gate": "D22",
+          "delay": null,
+          "scheduled": "2025-04-11T16:45:00+00:00",
+          "estimated": "2025-04-11T16:45:00+00:00",
+          "actual": null,
+          "estimated_runway": null,
+          "actual_runway": null
+        },
+        "arrival": {
+          "airport": "London Heathrow Airport",
+          "timezone": "Europe/London",
+          "iata": "LHR",
+          "icao": "EGLL",
+          "terminal": "3",
+          "gate": "31",
+          "baggage": "4",
+          "scheduled": "2025-04-12T07:50:00+00:00",
+          "delay": null,
+          "estimated": "2025-04-12T07:50:00+00:00",
+          "actual": null,
+          "estimated_runway": null,
+          "actual_runway": null
+        },
+        "airline": {
+          "name": "American Airlines",
+          "iata": "AA",
+          "icao": "AAL"
+        },
+        "flight": {
+          "number": "50",
+          "iata": "AA50",
+          "icao": "AAL50",
+          "codeshared": null
+        },
+        "aircraft": {
+          "registration": "N723AN",
+          "iata": "B772",
+          "icao": "B772",
+          "model": "Boeing 777-200"
+        },
+        "live": null
+      },
+      {
+        "flight_date": "2025-04-11",
+        "flight_status": "cancelled",
+        "departure": {
+          "airport": "Sydney Airport",
+          "timezone": "Australia/Sydney",
+          "iata": "SYD",
+          "icao": "YSSY",
+          "terminal": "1",
+          "gate": "10",
+          "delay": null,
+          "scheduled": "2025-04-11T10:35:00+00:00",
+          "estimated": "2025-04-11T10:35:00+00:00",
+          "actual": null,
+          "estimated_runway": null,
+          "actual_runway": null
+        },
+        "arrival": {
+          "airport": "Melbourne Airport",
+          "timezone": "Australia/Melbourne",
+          "iata": "MEL",
+          "icao": "YMML",
+          "terminal": "1",
+          "gate": "12",
+          "baggage": "2",
+          "scheduled": "2025-04-11T12:05:00+00:00",
+          "delay": null,
+          "estimated": "2025-04-11T12:05:00+00:00",
+          "actual": null,
+          "estimated_runway": null,
+          "actual_runway": null
+        },
+        "airline": {
+          "name": "Qantas",
+          "iata": "QF",
+          "icao": "QFA"
+        },
+        "flight": {
+          "number": "425",
+          "iata": "QF425",
+          "icao": "QFA425",
+          "codeshared": null
+        },
+        "aircraft": {
+          "registration": "VH-VZL",
+          "iata": "B738",
+          "icao": "B738",
+          "model": "Boeing 737-800"
+        },
+        "live": null
+      },
+      {
+        "flight_date": "2025-04-11",
+        "flight_status": "scheduled",
+        "departure": {
+          "airport": "Zurich Airport",
+          "timezone": "Europe/Zurich",
+          "iata": "ZRH",
+          "icao": "LSZH",
+          "terminal": "E",
+          "gate": "E45",
+          "delay": null,
+          "scheduled": "2025-04-11T12:10:00+00:00",
+          "estimated": "2025-04-11T12:10:00+00:00",
+          "actual": null,
+          "estimated_runway": null,
+          "actual_runway": null
+        },
+        "arrival": {
+          "airport": "New York John F. Kennedy International Airport",
+          "timezone": "America/New_York",
+          "iata": "JFK",
+          "icao": "KJFK",
+          "terminal": "4",
+          "gate": "A6",
+          "baggage": "3",
+          "scheduled": "2025-04-11T15:00:00+00:00",
+          "delay": null,
+          "estimated": "2025-04-11T15:00:00+00:00",
+          "actual": null,
+          "estimated_runway": null,
+          "actual_runway": null
+        },
+        "airline": {
+          "name": "Swiss International Air Lines",
+          "iata": "LX",
+          "icao": "SWR"
+        },
+        "flight": {
+          "number": "16",
+          "iata": "LX16",
+          "icao": "SWR16",
+          "codeshared": null
+        },
+        "aircraft": {
+          "registration": "HB-JNH",
+          "iata": "A333",
+          "icao": "A333",
+          "model": "Airbus A330-300"
+        },
+        "live": null
+      },
+      {
+        "flight_date": "2025-04-11",
+        "flight_status": "active",
+        "departure": {
+          "airport": "Denver International Airport",
+          "timezone": "America/Denver",
+          "iata": "DEN",
+          "icao": "KDEN",
+          "terminal": "B",
+          "gate": "B32",
+          "delay": 5,
+          "scheduled": "2025-04-11T07:15:00+00:00",
+          "estimated": "2025-04-11T07:20:00+00:00",
+          "actual": "2025-04-11T07:20:00+00:00",
+          "estimated_runway": "2025-04-11T07:28:00+00:00",
+          "actual_runway": "2025-04-11T07:28:00+00:00"
+        },
+        "arrival": {
+          "airport": "Portland International Airport",
+          "timezone": "America/Los_Angeles",
+          "iata": "PDX",
+          "icao": "KPDX",
+          "terminal": "C",
+          "gate": "C8",
+          "baggage": "3",
+          "scheduled": "2025-04-11T09:10:00+00:00",
+          "delay": null,
+          "estimated": "2025-04-11T09:15:00+00:00",
+          "actual": null,
+          "estimated_runway": null,
+          "actual_runway": null
+        },
+        "airline": {
+          "name": "Southwest Airlines",
+          "iata": "WN",
+          "icao": "SWA"
+        },
+        "flight": {
+          "number": "1274",
+          "iata": "WN1274",
+          "icao": "SWA1274",
+          "codeshared": null
+        },
+        "aircraft": {
+          "registration": "N8712L",
+          "iata": "B738",
+          "icao": "B738",
+          "model": "Boeing 737-800"
+        },
+        "live": {
+          "updated": "2025-04-11T08:30:00+00:00",
+          "latitude": 43.5680,
+          "longitude": -116.2230,
+          "altitude": 38000,
+          "direction": 280,
+          "speed_horizontal": 510,
+          "speed_vertical": 0,
+          "is_ground": false
+        }
+      },
+      {
+        "flight_date": "2025-04-11",
+        "flight_status": "scheduled",
+        "departure": {
+          "airport": "Hong Kong International Airport",
+          "timezone": "Asia/Hong_Kong",
+          "iata": "HKG",
+          "icao": "VHHH",
+          "terminal": "1",
+          "gate": "28",
+          "delay": null,
+          "scheduled": "2025-04-11T23:55:00+00:00",
+          "estimated": "2025-04-11T23:55:00+00:00",
+          "actual": null,
+          "estimated_runway": null,
+          "actual_runway": null
+        },
+        "arrival": {
+          "airport": "Auckland Airport",
+          "timezone": "Pacific/Auckland",
+          "iata": "AKL",
+          "icao": "NZAA",
+          "terminal": "I",
+          "gate": "8",
+          "baggage": "4",
+          "scheduled": "2025-04-12T13:40:00+00:00",
+          "delay": null,
+          "estimated": "2025-04-12T13:40:00+00:00",
+          "actual": null,
+          "estimated_runway": null,
+          "actual_runway": null
+        },
+        "airline": {
+          "name": "Cathay Pacific",
+          "iata": "CX",
+          "icao": "CPA"
+        },
+        "flight": {
+          "number": "199",
+          "iata": "CX199",
+          "icao": "CPA199",
+          "codeshared": null
+        },
+        "aircraft": {
+          "registration": "B-LXL",
+          "iata": "A359",
+          "icao": "A359",
+          "model": "Airbus A350-900"
+        },
+        "live": null
+      },
+      {
+        "flight_date": "2025-04-11",
+        "flight_status": "landed",
+        "departure": {
+          "airport": "Barcelona–El Prat Airport",
+          "timezone": "Europe/Madrid",
+          "iata": "BCN",
+          "icao": "LEBL",
+          "terminal": "1",
+          "gate": "D25",
+          "delay": null,
+          "scheduled": "2025-04-11T06:35:00+00:00",
+          "estimated": "2025-04-11T06:35:00+00:00",
+          "actual": "2025-04-11T06:40:00+00:00",
+          "estimated_runway": "2025-04-11T06:40:00+00:00",
+          "actual_runway": "2025-04-11T06:40:00+00:00"
+        },
+        "arrival": {
+          "airport": "Amsterdam Airport Schiphol",
+          "timezone": "Europe/Amsterdam",
+          "iata": "AMS",
+          "icao": "EHAM",
+          "terminal": "1",
+          "gate": "B23",
+          "baggage": "6",
+          "scheduled": "2025-04-11T09:00:00+00:00",
+          "delay": null,
+          "estimated": "2025-04-11T09:00:00+00:00",
+          "actual": "2025-04-11T08:55:00+00:00",
+          "estimated_runway": "2025-04-11T08:55:00+00:00",
+          "actual_runway": "2025-04-11T08:55:00+00:00"
+        },
+        "airline": {
+          "name": "KLM Royal Dutch Airlines",
+          "iata": "KL",
+          "icao": "KLM"
+        },
+        "flight": {
+          "number": "1666",
+          "iata": "KL1666",
+          "icao": "KLM1666",
+          "codeshared": null
+        },
+        "aircraft": {
+          "registration": "PH-BXZ",
+          "iata": "B738",
+          "icao": "B738",
+          "model": "Boeing 737-800"
+        },
+        "live": null
+      }
+    ]
+}
+]

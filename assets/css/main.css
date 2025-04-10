@@ -420,7 +420,7 @@ button.reverse__image img{
 }
 .direction {
 	display: flex;
-	align-items: center;
+	align-items: flex-start;
 	flex-basis: 44.498539%; /* 457/1027 */
 	flex-grow: 0;
 	flex-shrink: 1;
@@ -461,6 +461,32 @@ button.reverse__image img{
 .passanger__button {
 }
 .search {
+}
+
+.direction__airports {
+}
+.airports {
+	display: none;
+	background-color: var(--light-blue);
+	color: var(--dark-red);
+}
+.airports.active{
+	display: block;
+}
+.airports-departure {
+}
+.airports-arrival{
+
+}
+#banner ul.airports__list {
+	margin: 0;
+}
+.airports__item {
+    text-align: right;
+}
+.airports__item{
+	border-bottom: 1px solid #000000;
+	padding-inline-end: 15px;
 }
 
 

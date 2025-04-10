@@ -130,20 +130,37 @@ mission ? antiDisappearObserver.observe(mission) : ''
 const directions = document.querySelectorAll(`label input[class*="direction"]`);
 const [from, to] = directions;
 
-async function findAirports(event){
+async function findDepartureAirport(event, method){
 	const airportData = await getAirlinesData('airports');
-	const data = airportData.data;
+	const data = airportData[0].data;
 	const value = event.target.value;
-	const matchedAirport = data.filter(({airport_name})=>{
-		return airport_name.includes(value);
-	})
-	console.log(matchedAirport);
+	const directionLabel = event.target.closest(`label[for="direction"]`).querySelector(".airports");
+	const airportsList = directionLabel.querySelector("ul.airports__list");
+	const airportItem = directionLabel.querySelectorAll("li.airports__item");
+	console.log(airportItem);
 	
+	directionLabel.classList.toggle("active", value)
+	
+	// const matchedAirport = data.filter(({departure})=>{
+	// 	return departure.airport.includes(value);
+	// });
+	data.forEach(({departure}, index)=>{
+		if(departure.airport.includes(value)){
+			console.log(departure.airport);
+			airportsList.append(departure.airport)
+		}else{
+			airportItem[index].remove()
+		}
+	})
+	// matchedAirport.forEach(airport=>{
+	// 	airportsList.append(airport)
+	// })
+	// console.log(matchedAirport);
 }
 
 
 const getAirlinesData = async (method) =>{
-		const data = await fetch(`https://api.aviationstack.com/v1/${method}?access_key=b645a0d1a740f47605783f357c645843`)
+		const data = await fetch(`./assets/json/${method}.json`)
 		return await data.json();
 }
 
@@ -158,5 +175,6 @@ const getAirlinesData = async (method) =>{
 })
 
 
-from.addEventListener("input", findAirports)
+from.addEventListener("input", findDepartureAirport)
+to.addEventListener("input", findDepartureAirport)
 
