@@ -126,3 +126,37 @@ const pageWrapper = document.getElementById("page-wrapper");
 mission ? antiDisappearObserver.observe(mission) : ''
 
 
+//BOOKING FORM
+const directions = document.querySelectorAll(`label input[class*="direction"]`);
+const [from, to] = directions;
+
+async function findAirports(event){
+	const airportData = await getAirlinesData('airports');
+	const data = airportData.data;
+	const value = event.target.value;
+	const matchedAirport = data.filter(({airport_name})=>{
+		return airport_name.includes(value);
+	})
+	console.log(matchedAirport);
+	
+}
+
+
+const getAirlinesData = async (method) =>{
+		const data = await fetch(`https://api.aviationstack.com/v1/${method}?access_key=b645a0d1a740f47605783f357c645843`)
+		return await data.json();
+}
+
+(async()=>{
+	try{
+		const airlinesData = await getAirlinesData('flights');
+		console.log('loading...');
+		console.log(airlinesData);
+	}catch(error){
+		console.error(error);
+	}
+})
+
+
+from.addEventListener("input", findAirports)
+
