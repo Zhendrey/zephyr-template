@@ -467,10 +467,30 @@ button.reverse__image img{
 }
 .airports {
 	display: none;
+}
+.airports.active{
+	display: block;
+}
+.airports__list{
+	max-height: 200px;
+	overflow: scroll;
+}
+li.airports__item{
+	display: none;
+	padding: 0;
+}
+.airports__item button{
+	padding: 0;
 	background-color: var(--light-blue);
 	color: var(--dark-red);
 }
-.airports.active{
+.airports__item button:active{
+	color: var(--offwhite);
+}
+.airports__item button:hover{
+	color: var(--offwhite);
+}
+.airports__item.active{
 	display: block;
 }
 .airports-departure {

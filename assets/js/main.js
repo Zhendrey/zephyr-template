@@ -127,8 +127,24 @@ mission ? antiDisappearObserver.observe(mission) : ''
 
 
 //BOOKING FORM
+const getAirlinesData = async (method) =>{
+	const data = await fetch(`./assets/json/${method}.json`)
+	return await data.json();
+}
+
 const directions = document.querySelectorAll(`label input[class*="direction"]`);
 const [from, to] = directions;
+const [...airportsList] = document.querySelectorAll(".airports__list");
+const data = await getAirlinesData('airports');
+
+let i = 0;
+while(i < airportsList.length){
+	for (let ii = 0; ii < data[0].data.length; ii++) {
+		const {departure} = data[0].data[ii];
+		manageItem("create", airportsList[i], departure.airport, 'airports__item')
+	}
+	i++;
+}
 
 async function findDepartureAirport(event, method){
 	const airportData = await getAirlinesData('airports');
@@ -137,31 +153,38 @@ async function findDepartureAirport(event, method){
 	const directionLabel = event.target.closest(`label[for="direction"]`).querySelector(".airports");
 	const airportsList = directionLabel.querySelector("ul.airports__list");
 	const airportItem = directionLabel.querySelectorAll("li.airports__item");
-	console.log(airportItem);
 	
 	directionLabel.classList.toggle("active", value)
 	
-	// const matchedAirport = data.filter(({departure})=>{
-	// 	return departure.airport.includes(value);
-	// });
-	data.forEach(({departure}, index)=>{
-		if(departure.airport.includes(value)){
-			console.log(departure.airport);
-			airportsList.append(departure.airport)
+	console.log(airportItem);
+	
+	const matchedAirport = data.filter(({departure})=>{
+		return departure.airport.includes(value);
+	}).map(({departure})=>departure.airport)
+
+	for (const item of airportItem) {
+		if(!matchedAirport.includes(item.textContent)){
+			item.classList.remove("active")
 		}else{
-			airportItem[index].remove()
+			item.classList.add("active")
 		}
-	})
-	// matchedAirport.forEach(airport=>{
-	// 	airportsList.append(airport)
-	// })
-	// console.log(matchedAirport);
+	}
+	
 }
 
-
-const getAirlinesData = async (method) =>{
-		const data = await fetch(`./assets/json/${method}.json`)
-		return await data.json();
+function manageItem(action, parent, text, className, el){
+	if(action == 'create'){
+		const item = document.createElement("li");
+		const button = document.createElement("button");
+		item.classList.add(className)
+		item.classList.add("active")
+		item.append(button);
+		button.textContent = text;
+		button.type = 'button';
+		parent.appendChild(item);
+	}else if(action == 'remove'){
+		el.remove()
+	}
 }
 
 (async()=>{
