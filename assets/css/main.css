@@ -364,6 +364,9 @@ ol{
 .cities-banner{
 	margin-bottom: 2rem;
 }
+.stay__image{
+	max-width: 600px;
+}
 
 /*FORM*/
 
