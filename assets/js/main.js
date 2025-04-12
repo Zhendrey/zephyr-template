@@ -4,6 +4,7 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+
 (function($) {
 
 	var	$window = $(window),
@@ -64,7 +65,7 @@
 })(jQuery);
 
 
-//PARIS (PARIJE)
+// PARIS (PARIJE)
 
 const reasons = document.querySelectorAll(".reasons__link");
 const titles = document.querySelectorAll(".paris .reasons__link h3");
@@ -135,16 +136,19 @@ const getAirlinesData = async (method) =>{
 const directions = document.querySelectorAll(`label input[class*="direction"]`);
 const [from, to] = directions;
 const [...airportsList] = document.querySelectorAll(".airports__list");
-const data = await getAirlinesData('airports');
 
-let i = 0;
-while(i < airportsList.length){
-	for (let ii = 0; ii < data[0].data.length; ii++) {
-		const {departure} = data[0].data[ii];
-		manageItem("create", airportsList[i], departure.airport, 'airports__item')
+(async()=>{
+	const data = await getAirlinesData('airports');
+	
+	let i = 0;
+	while(i < airportsList.length){
+		for (let ii = 0; ii < data[0].data.length; ii++) {
+			const {departure} = data[0].data[ii];
+			manageItem("create", airportsList[i], departure.airport, 'airports__item')
+		}
+		i++;
 	}
-	i++;
-}
+})()
 
 async function findDepartureAirport(event, method){
 	const airportData = await getAirlinesData('airports');
