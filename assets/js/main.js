@@ -133,12 +133,19 @@ const getAirlinesData = async (method) =>{
 	return await data.json();
 }
 
+//DOM ELEMENTS
 const directions = document.querySelectorAll(`label input[class*="direction"]`);
-const [from, to] = directions;
+const [...rest] = directions;
+const [from, to] = document.querySelectorAll(".form__direction");
 const [...airportsList] = document.querySelectorAll(".airports__list");
+const reversedBtn = document.querySelector(".reverse-button")
 
+function isValue(){
+	return document.querySelectorAll(".airports__item").some(item=>item.length)
+}
 (async()=>{
 	const data = await getAirlinesData('airports');
+	console.log(data[0].data);
 	
 	let i = 0;
 	while(i < airportsList.length){
@@ -150,21 +157,19 @@ const [...airportsList] = document.querySelectorAll(".airports__list");
 	}
 })()
 
-async function findDepartureAirport(event, method){
+
+async function findDepartureAirport(event){
 	const airportData = await getAirlinesData('airports');
 	const data = airportData[0].data;
-	const value = event.target.value;
+	const value = event.target.value.toLowerCase();
 	const directionLabel = event.target.closest(`label[for="direction"]`).querySelector(".airports");
-	const airportsList = directionLabel.querySelector("ul.airports__list");
 	const airportItem = directionLabel.querySelectorAll("li.airports__item");
 	
-	directionLabel.classList.toggle("active", value)
-	
-	console.log(airportItem);
-	
 	const matchedAirport = data.filter(({departure})=>{
-		return departure.airport.includes(value);
+		return departure.airport.toLowerCase().includes(value);
 	}).map(({departure})=>departure.airport)
+	directionLabel.classList.toggle("active", value !== ' ' && value !== '' && matchedAirport.length)
+	
 
 	for (const item of airportItem) {
 		if(!matchedAirport.includes(item.textContent)){
@@ -173,10 +178,11 @@ async function findDepartureAirport(event, method){
 			item.classList.add("active")
 		}
 	}
-	
 }
+rest.forEach(input=>input.addEventListener("input", findDepartureAirport))
 
-function manageItem(action, parent, text, className, el){
+
+function manageItem(action, parent, text,  className, el){
 	if(action == 'create'){
 		const item = document.createElement("li");
 		const button = document.createElement("button");
@@ -191,17 +197,40 @@ function manageItem(action, parent, text, className, el){
 	}
 }
 
-(async()=>{
-	try{
-		const airlinesData = await getAirlinesData('flights');
-		console.log('loading...');
-		console.log(airlinesData);
-	}catch(error){
-		console.error(error);
-	}
-})
+airportsList.forEach(item=>item.addEventListener("click", selectAirport))
 
+async function selectAirport(event){
+	const formEl = event.target.closest("form");
+	const targetElem = event.target.closest(".airports__item button");
+	pasteSelectedAirport(targetElem.closest("label"), targetElem.textContent);
+	formEl.reset();
+}
 
-from.addEventListener("input", findDepartureAirport)
-to.addEventListener("input", findDepartureAirport)
+function pasteSelectedAirport(parent, airportName){
+	const selectedAirport = document.createElement("button");
+	const selectedAirport_NAME = document.createElement("span");
+	const selectedAirport_REMOVE = document.createElement("a");
+	const removeImage = document.createElement("img");
+	selectedAirport.classList.add("selected-airport");
+	selectedAirport.type = 'button'
+	selectedAirport.classList.add("airports__selected-airport");
+	selectedAirport_NAME.classList.add("selected-airport__name");
+	selectedAirport_NAME.textContent = airportName;
+	selectedAirport_REMOVE.href = '#';
+	selectedAirport_REMOVE.classList.add("selected-airport__remove");
+	selectedAirport_REMOVE.classList.add("icon");
+	selectedAirport_REMOVE.classList.add("icon-cross");
+	parent.prepend(selectedAirport);
+	selectedAirport.append(selectedAirport_NAME);
+	selectedAirport.append(selectedAirport_REMOVE);
+}
 
+//REVERSE ORDER
+function reverseOrder(){
+	from.classList.toggle("reversed");
+	to.classList.toggle("reversed");
+	from.querySelector('input').placeholder = from.classList.contains("reversed") ? 'To?' : 'From?'
+	to.querySelector('input').placeholder = to.classList.contains("reversed") ? 'From?' : 'To?'
+}
+
+reversedBtn.addEventListener("click", reverseOrder)

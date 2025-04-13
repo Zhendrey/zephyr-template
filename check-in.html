@@ -52,20 +52,36 @@
 										</section>
 										<section class="form__body">
 											<div class="form__group direction">
-												<label for="direction">
-													<input placeholder="From?" class="direction-from" name="from" type="text">
+												<label for="direction" class="form__direction form__direction-from">
+													<div class="direction__results">
+														<input placeholder="From?" class="direction-from" name="from" type="text">
+													</div>
 													<div class="direction__airports airports airports-departure">
 														<ul class="airports__list">
-															<li class="airports__item">LAX</li>
+															<li style="display: block;" class="airports__item item">
+																<button type="button" class="item__button">
+																	<div class="item__body">
+																		<div class="item__plane-icon">
+																			<svg viewBox="0 0 200 200" width="20" height="20" xmlns="http://www.w3.org/2000/svg" role="presentation"><path d="M178.081 41.973c-2.681 2.663-16.065 17.416-28.956 30.221c0 107.916 3.558 99.815-14.555 117.807l-14.358-60.402l-14.67-14.572c-38.873 38.606-33.015 8.711-33.015 45.669c.037 8.071-3.373 13.38-8.263 18.237L50.66 148.39l-30.751-13.513c10.094-10.017 15.609-8.207 39.488-8.207c8.127-16.666 18.173-23.81 26.033-31.62L70.79 80.509L10 66.269c17.153-17.039 6.638-13.895 118.396-13.895c12.96-12.873 26.882-27.703 29.574-30.377c7.745-7.692 28.017-14.357 31.205-11.191c3.187 3.166-3.349 23.474-11.094 31.167zm-13.674 42.469l-8.099 8.027v23.58c17.508-17.55 21.963-17.767 8.099-31.607zm-48.125-47.923c-13.678-13.652-12.642-10.828-32.152 8.57h23.625l8.527-8.57z"></path></svg>
+																		</div>
+																		<div class="item__info">
+																			<h4 class="item__title">New York, United States</h4>
+																			<span class="item__abriviation">JFK</span>
+																			<p class="item__airport-name">John F. Kennedy Intl</p>
+																		</div>
+																	</div>
+																	<input type="checkbox" class="item__checkbox">
+																</button>
+															</li>
 															<li class="airports__item">JFK</li>
 															<li class="airports__item">ORD</li>
 														</ul>
 													</div>
 												</label>
-												<button type="button" class="reverse__image">
+												<button type="button" class="reverse-button">
 													<svg viewBox="0 0 200 200" width="1.25em" height="1.25em" xmlns="http://www.w3.org/2000/svg" class="z8m1-icon" role="presentation"><path d="M56.238 154.801c-25.271-30.326-30.335-33.201-25-39.603l25-30l11.523 9.603L53.013 112.5H120v15H53.013l14.749 17.699l-11.524 9.602zm86.524-40l-11.523-9.603L145.987 87.5H80v-15h65.987l-14.749-17.699l11.523-9.603l25 30c5.335 6.403.272 9.278-24.999 39.603z"></path></svg>
 												</button>
-												<label for="direction">
+												<label for="direction"  class="form__direction form__direction-to">
 													<input placeholder="To?" class="direction-to" name="to" type="text">
 													<div class="direction__airports airports airports-arrival">
 														<ul class="airports__list">
@@ -88,95 +104,6 @@
 											<button type="submit" class="form__group search">Search</button>
 										</section>
 								</form>
-							</div>
-						</div>
-					</div>
-				</div>
-				
-				<div id="features-wrapper" class="feature">
-					<div class="container">
-						<div class="row special-row gtr-200">
-							<div class="card col-4 col-12-medium">
-								<!-- Box -->
-									<div href="./cities/paris.html" class="box feature">
-										<div href="./cities/paris.html" class="image featured">
-										<img src="images/AvenueDeNewYork.jpg" alt="Paris">
-										</div>
-										<div href="#" class="inner">
-											<header>
-												<a class="inner__title" href="./cities/paris.html"> Paris </a>
-												<p> Premium class returns April 26 </p>
-											</header>
-											<p> $6,812 USD </p>
-										</div>
-									</div>
-							</div>
-							<div class="card col-4 col-12-medium">
-			
-								<!-- Box -->
-									<section class="box feature">
-										<a href="#" class="image featured"><img src="images/353ec907-ap-MAD-551b0685.jpg" alt="airplane"></a>
-										<div class="inner">
-											<header>
-												<a class="inner__title" href="./cities/madrid.html"> Madrid </a>
-												<p> first class will take off in march 27 </p>
-											</header>
-											<p> $6,812 USD </p>
-										</div>
-									</section>
-			
-							</div>
-							<div class="card col-4 col-12-medium">
-								<!-- Box -->
-									<section class="box feature">
-										<a href="./cities/tokyo.html" class="image featured"><img src="images/filters-format(webp).webp" alt="" /></a>
-										<div class="inner">
-											<header>
-												<a class="inner__title" href="./cities/tokyo.html">Tokyo </a>
-												<p> business class return in July 22</p>
-											</header>
-											<p> $ 3,021 USD </p>
-										</div>
-									</section>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- Main -->
-				<div id="main-wrapper">
-					<div class="container">
-						<div class="row gtr-200 mission">
-							<div id="classes" class="col-4 col-12-medium">
-
-								<!-- Sidebar -->
-									<div id="sidebar">
-										<section class="widget thumbnails">
-											<h3>learn about our flight classes </h3>
-											<div class="grid">
-												<div class="row gtr-50">
-													<div class="col-6"><a href="#" class="image fit text-style fz-medium"><img src="images/economy-class.webp" alt="economy class" />Economy class</a></div>
-													<div class="col-6"><a href="#" class="image fit text-style fz-medium"><img src="images/business-class.webp" alt="business class" />Busimess class</a></div>
-													<div class="col-6"><a href="#" class="image fit text-style fz-medium"><img src="images/first-class.webp" alt="first class" />First class</a></div>
-													<div class="col-6"><a href="#" class="image fit text-style fz-medium"><img src="images/premium-class.webp" alt="premuim class" />Premium Class</a></div>
-												</div>
-											</div>
-											<a href="#" class="button icon fa-file-alt">More</a>
-										</section>
-									</div>
-
-							</div>
-							<div class="col-8 col-12-medium imp-medium">
-
-								<!-- Content -->
-									<div id="content">
-										<section class="last">
-											<h2>Our Mission</h2>
-											<p>At <strong>Zephyr Airlines</strong>, our mission is to provide a seamless and enjoyable travel experience for all our passengers. We are dedicated to safety, comfort, and customer satisfaction.</p>
-											<p>We strive to be the airline of choice by offering superior service, innovative solutions, and a commitment to excellence. Join us on our journey as we continue to set new standards in the aviation industry.</p>
-											<a href="#" class="button icon solid fa-arrow-circle-right">Learn More</a>
-										</section>
-									</div>
-
 							</div>
 						</div>
 					</div>

@@ -1,6 +1,6 @@
 @import url("fontawesome-all.min.css");
 @import url("https://fonts.googleapis.com/css?family=Oleo+Script:400|Open+Sans:300,300italic,600,600italic,800");
-
+@import url("https://fonts.googleapis.com/css?family=Inter:300,regular,500,600,700,800,900,300italic,italic,500italic,600italic,700italic,800italic,900italic&display=swap");
 /*
 	Zephyr Airlines
 	html5up.net | @ajlkn
@@ -376,7 +376,7 @@ ol{
 .form fieldset *{
 	border: inherit;
 }
-button.reverse__image img{
+button.reverse-button img{
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
@@ -410,7 +410,7 @@ button.reverse__image img{
 .form__body{
 	display: flex;
 	justify-content: center;
-	align-items: center;
+	align-items: flex-start;
 	flex-wrap: wrap;
 	gap: 30px;
 }
@@ -419,14 +419,9 @@ button.reverse__image img{
 	flex-wrap: inherit;
 	gap: inherit;
 }
-.buttons {
-}
 .direction {
 	display: flex;
 	align-items: flex-start;
-	flex-basis: 44.498539%; /* 457/1027 */
-	flex-grow: 0;
-	flex-shrink: 1;
 }
 @media(min-width: 1160px){
 	.form__body{
@@ -434,12 +429,13 @@ button.reverse__image img{
 	}
 
 }
-.direction-from {
+.direction__results{
+	margin-bottom: 10px;
 }
-.reverse__image {
+.reverse-button {
 	fill: white;
 }
-.reverse__image:hover::after {
+.reverse-butotn:hover::after {
 	content: '_';
 	position: absolute;
 	left: 0;
@@ -464,6 +460,7 @@ button.reverse__image img{
 .passanger__button {
 }
 .search {
+	font-family: "Inter";
 }
 
 .direction__airports {
@@ -476,16 +473,19 @@ button.reverse__image img{
 }
 .airports__list{
 	max-height: 200px;
-	overflow: scroll;
+	overflow-y: auto;
+	padding-right: 15px;
 }
 li.airports__item{
 	display: none;
 	padding: 0;
 }
+.airports__item:not(:last-child){
+	margin-bottom: 10px;
+}
 .airports__item button{
-	padding: 0;
-	background-color: var(--light-blue);
-	color: var(--dark-red);
+	width: 100%;
+	font-family: "Inter";
 }
 .airports__item button:active{
 	color: var(--offwhite);
@@ -496,22 +496,75 @@ li.airports__item{
 .airports__item.active{
 	display: block;
 }
-.airports-departure {
+.direction__airports{
+	position: relative;
 }
-.airports-arrival{
+.form__direction-from{
+	order: 1;
+}
+.reverse-button{
+	order: 2;
+}
+.form__direction-to{
+	order: 3;
+}
+.form__direction-from.reversed{
+	order: 3;
+}
+.form__direction-to.reversed{
+	order: 1;
+}
 
+.selected-airport{
+	font-size: 0.8rem;
+}
+.airports__selected-airport{
+	margin-bottom: 10px;
 }
 #banner ul.airports__list {
 	margin: 0;
 }
-.airports__item {
-    text-align: right;
-}
-.airports__item{
-	border-bottom: 1px solid #000000;
-	padding-inline-end: 15px;
-}
 
+.airports__item {
+}
+.item{
+	display: block;
+}
+.item__button {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.item__body {
+	display: flex;
+	align-items: center;
+	column-gap: 1rem;
+}
+.item__plane-icon{
+	padding: 8px;
+	background-color: var(--offwhite);
+	border-radius: 5px;
+}
+.item__plane-icon svg{
+	fill: var(--dark-red);
+}
+.item__info {
+}
+h4.item__title {
+	font-size: 0.9375rem;
+	line-height: 1;
+	color: var(--offwhite);
+	margin-bottom: 0.66666667em; /* 10/15 */
+}
+.item__abriviation{
+	font-weight: 300;
+}
+#banner p.item__airport-name {
+	font-size: 0.875rem;
+	font-weight: 300;
+}
+.item__checkbox {
+}
 
 div#page-wrapper{
 	padding-inline: 15px;
