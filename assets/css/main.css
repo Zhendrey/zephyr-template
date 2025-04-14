@@ -155,7 +155,13 @@ div.row__content {
 .call-to-action__list{
 	display: grid;
     gap: 12px;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+@media (max-width: 425px) {
+	.call-to-action__link{
+		font-size: 0.875rem;
+	}
 }
 
 /*FEATURES*/
@@ -409,10 +415,11 @@ button.reverse-button img{
 }
 .form__body{
 	display: flex;
-	justify-content: center;
+	justify-content: flex-start;
 	align-items: flex-start;
 	flex-wrap: wrap;
 	gap: 30px;
+	overflow: scroll;
 }
 .form__body > *{
 	justify-content: inherit;
@@ -506,6 +513,8 @@ li.airports__item{
 }
 .reverse-button{
 	order: 2;
+	flex-basis: content;
+	padding: 20px;
 }
 .form__direction-to{
 	order: 3;
@@ -516,12 +525,16 @@ li.airports__item{
 .form__direction-to.reversed{
 	order: 1;
 }
+button.search{
+	justify-self: center;
+}
 
 .selected-airport{
 	font-size: 0.8rem;
 }
 .airports__selected-airport{
 	margin-bottom: 10px;
+	padding-inline: 10px;
 }
 #banner ul.airports__list {
 	margin: 0;
@@ -578,6 +591,77 @@ h4.item__title {
 	font-weight: 300;
 }
 .item__checkbox {
+}
+
+/*PASSANGER*/
+.passanger {
+	position: relative;
+}
+.passanger__button{
+	display: block;
+}
+.passanger__button:not(:last-child){
+	margin-bottom: 5px;
+}
+.passanger__button:hover {
+	cursor: pointer;
+	text-decoration: underline;
+}
+.passanger__dropdown {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: auto;
+	height: auto;
+	transform: translateX(-45%);
+	z-index: 2;
+	box-shadow: 0 0 5px 0 rgba(111, 110, 110, 0.402);
+	background-color: white;
+	padding: 10px;
+}
+.dropdown {
+	display: none;
+}
+.dropdown.active{
+	display: block;
+}
+.dropdown__category {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+.dropdown__category:not(:last-child){
+	margin-bottom: 15px;
+}
+.category {
+}
+.category__title {
+	font-size: 1.25rem;
+	font-weight: bold;
+}
+#banner .category__description {
+	font-size: 0.875rem;
+}
+.category__counter {
+	display: flex;
+	gap: 8px;
+}
+button.category__decrease,
+button.category__increase {
+	padding: 10px;
+}
+.category__counter span{
+	font-size: 14px;
+}
+.category__increase {
+}
+.category__title-big {
+}
+.category__options {
+}
+.category__option {
+}
+.dropdown__apply {
 }
 
 div#page-wrapper{

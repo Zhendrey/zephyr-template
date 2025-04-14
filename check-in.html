@@ -44,14 +44,14 @@
 								<!-- Form. Insparation from: kayak.com -->
 								<form action="#" method="get" class="form">
 										<legend>Choose your flight seamlessfly.</legend>
-										<section class="form__group select">
+										<div class="form__group select">
 											<select name="trip" id="trip">
 												<option selected value="Round-trip">Round-trip</option>
 												<option value="One-way">One-way</option>
 											</select>
-										</section>
-										<section class="form__body">
-											<div class="form__group direction">
+										</div>
+										<div class="form__body">
+											<section class="form__group direction">
 												<label for="direction" class="form__direction form__direction-from">
 													<div class="direction__results">
 														<input placeholder="From?" class="direction-from" name="from" type="text">
@@ -71,18 +71,79 @@
 														</ul>
 													</div>
 												</label>
-											</div>
-											<div class="form__group dates">
+											</section>
+											<section class="form__group dates">
 												<label for="dates">
 													<input placeholder="Departure date" class="departure-date" name="departure-date" type="date">
 												</label>
 												<label for="dates">
 													<input placeholder="Return date" class="return-date" name="return-date" type="date">
 												</label>
-											</div>
-											<span class="passanger__button">1 adult, Economy, 0 bag</span>
+											</section>
+											<section class="passanger">
+												<span class="passanger__button">1 adult, Economy, 0 bag</span>
+												<div class="passanger__dropdown dropdown">
+													<div class="dropdown__category category">
+														<h4 class="category__title">Children/Teens</h4>
+														<p class="category__description">Age 2-17</p>
+														<div class="category__counter">
+															<button class="category__decrease">-</button>
+															<span>1</span>
+															<button class="category__increase">+</button>
+														</div>
+													</div>
+													<div class="dropdown__category category">
+														<h4 class="category__title">Infants</h4>
+														<p class="category__description">Under 2</p>
+														<div class="category__counter">
+															<button class="category__decrease">-</button>
+															<span>1</span>
+															<button class="category__increase">+</button>
+														</div>
+													</div>
+													<div class="dropdown__category category">
+														<h4 class="category__title">Adults</h4>
+														<p class="category__description">Age 18+</p>
+														<div class="category__counter">
+															<button class="category__decrease">-</button>
+															<span>1</span>
+															<button class="category__increase">+</button>
+														</div>
+													</div>
+													<div class="dropdown__category category">
+														<h3 class="category__title category__title-big">Cabin Class</h3>
+														<div class="category__options">
+															<label for="option" class="category__option">
+																Economy
+																<input checked name="option" type="radio">
+															</label>
+															<label for="option" class="category__option">
+																Premium
+																<input name="option" type="radio">
+															</label>
+															<label for="option" class="category__option">
+																Business
+																<input name="option" type="radio">
+															</label>
+															<label for="option" class="category__option">
+																First Class
+																<input name="option" type="radio">
+															</label>
+														</div>
+													</div>
+													<div class="dropdown__category category">
+														<h3 class="category__title category__title-big">Checked Bags</h3>
+														<div class="category__counter">
+															<button class="category__decrease">-</button>
+															<span>0</span>
+															<button class="category__increase">+</button>
+														</div>
+													</div>
+													<button type="button" class="dropdown__apply">Apply</button>
+												</div>
+											</section>
 											<button type="submit" class="form__group search">Search</button>
-										</section>
+										</div>
 								</form>
 							</div>
 						</div>

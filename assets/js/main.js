@@ -287,3 +287,42 @@ function reverseOrder(){
 }
 
 reversedBtn.addEventListener("click", reverseOrder)
+
+
+//DATES
+
+//DOM NODES
+const dates = document.querySelectorAll(`.dates input[type="date"]`);
+const [departureDate, returnDate] = dates;
+
+//VARIABLES
+let day = new Date().getDate();
+let initMonth = new Date().getMonth();
+const month = '0' + ++initMonth;
+const year = new Date().getFullYear();
+
+const today = `${year}-${month}-${day}`;
+const tomorrow = `${year}-${month}-${++day}`;
+
+const initDepature = today;
+const initReturn = tomorrow;
+
+departureDate.value = initDepature;
+returnDate.value = initReturn;
+
+//PASSANGER
+const banner = document.querySelector("#banner");
+const dropdown = document.querySelector(".dropdown");
+const passangerButton = document.querySelector(".passanger__button");
+
+const isClicked = new MutationObserver((mutations)=>{
+	mutations.forEach(mutation=>console.log(mutation.target))
+})
+
+isClicked.observe(dropdown, {subtree: true, childList: true})
+
+banner.addEventListener("click", (e)=>{
+	if(!e.target.classList.contains("passanger__button")) dropdown.classList.remove("active")
+	else dropdown.classList.toggle("active");
+}
+)
