@@ -271,11 +271,11 @@ function pasteSelectedAirport(parent, airportName){
 	selectedAirport.append(selectedAirport_REMOVE);
 
 	parent.prepend(selectedAirport);
-	selectedAirport.insertAdjacentHTML("beforeend", 
-		`
+	// selectedAirport.insertAdjacentHTML("beforeend", 
+	// 	`
 
-		`
-	)
+	// 	`
+	// )
 }
 
 //REVERSE ORDER
