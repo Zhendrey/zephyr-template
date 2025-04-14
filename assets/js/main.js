@@ -137,8 +137,24 @@ const getAirlinesData = async (method) =>{
 const directions = document.querySelectorAll(`label input[class*="direction"]`);
 const [...rest] = directions;
 const [from, to] = document.querySelectorAll(".form__direction");
+const labels = [from, to];
 const [...airportsList] = document.querySelectorAll(".airports__list");
 const reversedBtn = document.querySelector(".reverse-button")
+const formEl = document.querySelector("form.form");
+const dataAboutForm = new FormData(formEl);
+const mutationObserver = new MutationObserver((mutations)=>{
+	mutations.forEach(mutation=>{
+		if(mutation.type == 'childList'){
+			const selectAirport = mutation.target.querySelectorAll(".selected-airport");
+			const airports = mutation.target.querySelector(".airports");
+			selectAirport.length ? airports.classList.remove("active") : ''
+		}
+		}
+	)
+})
+
+
+labels.forEach(label=>{mutationObserver.observe(label, {childList: true})})
 
 function isValue(){
 	return document.querySelectorAll(".airports__item").some(item=>item.length)
@@ -253,6 +269,13 @@ function pasteSelectedAirport(parent, airportName){
 	parent.prepend(selectedAirport);
 	selectedAirport.append(selectedAirport_NAME);
 	selectedAirport.append(selectedAirport_REMOVE);
+
+	parent.prepend(selectedAirport);
+	selectedAirport.insertAdjacentHTML("beforeend", 
+		`
+
+		`
+	)
 }
 
 //REVERSE ORDER
