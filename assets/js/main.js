@@ -142,6 +142,7 @@ const [...airportsList] = document.querySelectorAll(".airports__list");
 const reversedBtn = document.querySelector(".reverse-button")
 const formEl = document.querySelector("form.form");
 const dataAboutForm = new FormData(formEl);
+const inputs = [from.querySelector(`input[class*="direction"]`).value, to.querySelector(`input[class*="direction"]`).value]
 const mutationObserver = new MutationObserver((mutations)=>{
 	mutations.forEach(mutation=>{
 		if(mutation.type == 'childList'){
@@ -248,8 +249,11 @@ airportsList.forEach(item=>item.addEventListener("click", selectAirport))
 async function selectAirport(event){
 	const formEl = event.target.closest("form");
 	const targetElem = event.target.closest(".airports__item button");
+	const input = event.target.closest(`.form__direction`).querySelector("input");
 	pasteSelectedAirport(targetElem.closest("label"), targetElem.textContent);
-	formEl.reset();
+	const airportText = event.target.closest(".item__button").querySelector(".item__body").querySelector(".item__abriviation").textContent;
+	console.log(airportText);
+	input.value = airportText;
 }
 
 function pasteSelectedAirport(parent, airportName){
@@ -326,3 +330,26 @@ banner.addEventListener("click", (e)=>{
 	else dropdown.classList.toggle("active");
 }
 )
+
+//SEARCH FOR FLIGHTS (REFER TO KAYAK.COM/FLIGHTS)
+
+formEl.addEventListener("submit", searchAtKayak)
+function searchAtKayak(e){
+	e.preventDefault();
+	const formData = new FormData(document.querySelector(".form"));
+	const origin = formData.get("from");
+	const destination = formData.get("to");
+	const initDepature = formData.get("departure-date");
+	const returnDate = formData.get("return-date");
+	const adults = formData.get("adults");
+	const children = formData.get("children");
+	const infants = formData.get("infants");
+	const travelClass = formData.get("class");
+	const bags = formData.get("bags");
+
+	const url = `
+	https://www.kayak.com/flights/${origin}-${destination}/${initDepature}/${returnDate}/${travelClass}s?ucs=r737jm&sort=bestflight_a
+	`
+	window.location.href = url;
+	console.log(url);
+}

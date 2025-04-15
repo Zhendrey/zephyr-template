@@ -419,7 +419,7 @@ button.reverse-button img{
 	align-items: flex-start;
 	flex-wrap: wrap;
 	gap: 30px;
-	overflow: scroll;
+	overflow: auto;
 }
 .form__body > *{
 	justify-content: inherit;
