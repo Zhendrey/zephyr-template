@@ -471,7 +471,7 @@ button.reverse-button img{
 .form input:user-invalid,
 .form input:invalid,
 .form input.invalid:valid,
-.form input.invalid:user-invalid {
+.form input.invalid:user-valid {
 	border: 1.8px solid red;
 }
 .form input:user-valid,
