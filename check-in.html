@@ -54,7 +54,7 @@
 											<section class="form__group direction">
 												<label for="direction" class="form__direction form__direction-from">
 													<div class="direction__results">
-														<input placeholder="From?" class="direction-from direction__input" name="from" type="text">
+														<input required placeholder="From?" class="direction-from direction__input main-input" name="from" type="text">
 													</div>
 													<div class="direction__airports airports airports-departure">
 														<ul class="airports__list">
@@ -65,7 +65,7 @@
 													<svg viewBox="0 0 200 200" width="1.25em" height="1.25em" xmlns="http://www.w3.org/2000/svg" class="z8m1-icon" role="presentation"><path d="M56.238 154.801c-25.271-30.326-30.335-33.201-25-39.603l25-30l11.523 9.603L53.013 112.5H120v15H53.013l14.749 17.699l-11.524 9.602zm86.524-40l-11.523-9.603L145.987 87.5H80v-15h65.987l-14.749-17.699l11.523-9.603l25 30c5.335 6.403.272 9.278-24.999 39.603z"></path></svg>
 												</button>
 												<label for="direction"  class="form__direction form__direction-to">
-													<input placeholder="To?" class="direction-to direction__input" name="to" type="text">
+													<input required placeholder="To?" class="direction-to direction__input main-input" name="to" type="text">
 													<div class="direction__airports airports airports-arrival">
 														<ul class="airports__list">
 														</ul>
@@ -74,10 +74,10 @@
 											</section>
 											<section class="form__group dates">
 												<label for="dates">
-													<input placeholder="Departure date" class="departure-date" name="departure-date" type="date">
+													<input required placeholder="Departure date" class="departure-date main-input today" name="today" type="date">
 												</label>
 												<label for="dates">
-													<input placeholder="Return date" class="return-date" name="return-date" type="date">
+													<input required placeholder="Return date" class="return-date main-input tommorow" name="tommorow" type="date">
 												</label>
 											</section>
 											<section class="passanger">
@@ -115,19 +115,19 @@
 														<div class="category__options">
 															<label for="option" class="category__option">
 																Economy
-																<input readonly name="class" value="economy" checked type="radio">
+																<input readonly name="class" class="category__input" value="economy" checked type="radio">
 															</label>
 															<label for="option" class="category__option">
 																Premium
-																<input readonly name="class" value="premuim" type="radio">
+																<input readonly name="class" class="category__input" value="premuim" type="radio">
 															</label>
 															<label for="option" class="category__option">
 																Business
-																<input readonly name="class" value="business" type="radio">
+																<input readonly name="class" class="category__input" value="business" type="radio">
 															</label>
 															<label for="option" class="category__option">
 																First
-																<input readonly  name="class" value="first" type="radio">
+																<input readonly  name="class" class="category__input" value="first" type="radio">
 															</label>
 														</div>
 													</div>

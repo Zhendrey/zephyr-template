@@ -421,6 +421,10 @@ button.reverse-button img{
 	gap: 30px;
 	overflow: auto;
 }
+#banner .form__message{
+	font-size: 20px;
+	font-style: italic;
+}
 .form__body > *{
 	justify-content: inherit;
 	flex-wrap: inherit;
@@ -448,8 +452,6 @@ button.reverse-button img{
 	left: 0;
 	bottom: 0;
 }
-.z8m1-icon {
-}
 .direction-to {
 }
 .dates{
@@ -459,6 +461,31 @@ button.reverse-button img{
 	border: none;
 }
 .departure-date {
+}
+.departure-date input {
+	
+}
+.dates input{
+	padding: 4px;
+}
+.form input:user-invalid,
+.form input:invalid,
+.form input.invalid:valid,
+.form input.invalid:user-invalid {
+	border: 1.8px solid red;
+}
+.form input:user-valid,
+.form input:valid
+{
+	border: 1.8px solid green;
+}
+.form input[type="date"]{
+	position: relative;
+}
+.form input[type="date"].invalid::before{
+	content: 'Wrong date format! Please, pick another date!';
+	color: red;
+	font-weight: bold;
 }
 .return-date {
 }

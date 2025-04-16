@@ -134,6 +134,9 @@ const getAirlinesData = async (method) =>{
 }
 
 //DOM ELEMENTS
+const inputs = document.querySelectorAll(".form input");
+const mainInputs = document.querySelectorAll(".form input.main-input");
+const sideInputs = document.querySelectorAll(".form .category__input");
 const directions = document.querySelectorAll(`label input[class*="direction"]`);
 const [...rest] = directions;
 const [from, to] = document.querySelectorAll(".form__direction");
@@ -142,7 +145,7 @@ const [...airportsList] = document.querySelectorAll(".airports__list");
 const reversedBtn = document.querySelector(".reverse-button")
 const formEl = document.querySelector("form.form");
 const dataAboutForm = new FormData(formEl);
-const inputs = [from.querySelector(`input[class*="direction"]`).value, to.querySelector(`input[class*="direction"]`).value]
+const directionInputs = [from.querySelector(`input[class*="direction"]`).value, to.querySelector(`input[class*="direction"]`).value]
 const mutationObserver = new MutationObserver((mutations)=>{
 	mutations.forEach(mutation=>{
 		if(mutation.type == 'childList'){
@@ -305,14 +308,65 @@ let initMonth = new Date().getMonth();
 const month = '0' + ++initMonth;
 const year = new Date().getFullYear();
 
-const today = `${year}-${month}-${day}`;
-const tomorrow = `${year}-${month}-${++day}`;
+const datesObj = {
+	"today": {
+		year: year,
+		month: month,
+		day: day,
+		valid: true,
+	},
+	"tommorow": {
+		year: year,
+		month: month,
+		day: ++day,
+		valid: true,
+	},
+};
+
+const today = `${datesObj.today.year}-${datesObj.today.month}-${datesObj.today.day}`;
+const tomorrow = `${datesObj.tommorow.year}-${datesObj.tommorow.month}-${datesObj.tommorow.day}`;
 
 const initDepature = today;
 const initReturn = tomorrow;
 
 departureDate.value = initDepature;
 returnDate.value = initReturn;
+
+dates.forEach(date=>date.addEventListener("input", checkInputs));
+
+function changeInput(e,obj){
+	const value = e.target.value;
+	const name = e.target.name;
+
+	const year = value.slice(0,value.indexOf('-'))
+
+	const month = value
+	.replace(year,'')
+	.slice(1,value.indexOf('-') - 1);
+
+	const day = value
+	.replace(year,'')
+	.replace(month,'')
+	.slice(2,value.indexOf('-'));
+
+	obj[name].year = year;
+	obj[name].month = month;
+	obj[name].day = day;
+
+	return (
+		obj["today"].day < obj["tommorow"].day 
+	&&
+		obj["tommorow"].day > obj["today"].day
+	)
+}
+function checkInputs(e){
+	const isDateValid = changeInput(e,datesObj);
+	if(!isDateValid) {
+		dates.forEach(date=>date.classList.add("invalid"));
+	}else{
+		dates.forEach(date=>date.classList.remove("invalid"));
+	}
+}
 
 //PASSANGER
 const banner = document.querySelector("#banner");
@@ -339,13 +393,14 @@ function searchAtKayak(e){
 	const formData = new FormData(document.querySelector(".form"));
 	const origin = formData.get("from");
 	const destination = formData.get("to");
-	const initDepature = formData.get("departure-date");
-	const returnDate = formData.get("return-date");
+	const initDepature = formData.get("today");
+	const returnDate = formData.get("tomorrow");
 	const adults = formData.get("adults");
 	const children = formData.get("children");
 	const infants = formData.get("infants");
 	const travelClass = formData.get("class");
 	const bags = formData.get("bags");
+
 
 	const url = `
 	https://www.kayak.com/flights/${origin}-${destination}/${initDepature}/${returnDate}/${travelClass}s?ucs=r737jm&sort=bestflight_a
