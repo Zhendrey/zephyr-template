@@ -393,7 +393,7 @@ isClicked.observe(dropdown, {subtree: true, childList: true})
 window.addEventListener("click", (e)=>{
 	const targetElem = e.target.closest('.passanger__button') || e.target.querySelector('.passanger__button')
 	console.log(targetElem);
-	if(e.target !== targetElem && e.target.closest(".passanger__button")){
+	if(e.target !== targetElem){
 		dropdown.classList.remove("active")
 	}else{
 		dropdown.classList.add("active")
@@ -401,7 +401,7 @@ window.addEventListener("click", (e)=>{
 }
 )
 
-//SEARCH FOR FLIGHTS (REFER TO KAYAK.COM/FLIGHTS)
+//SEARCH FOR FLIGHTS (REDIRECT TO KAYAK.COM/FLIGHTS)
 
 formEl.addEventListener("submit", searchAtKayak)
 function searchAtKayak(e){
@@ -418,9 +418,20 @@ function searchAtKayak(e){
 	const bags = formData.get("bags");
 
 	console.log(destination);
+
+	console.log(initDepature);
 	const url = `
-	https://www.kayak.com/flights/${origin}-${destination}/${initDepature}/${returnDate}/${travelClass}s?ucs=r737jm&sort=bestflight_a
+	https://www.kayak.com/flights/${origin}-${destination}/${initDepature}/${returnDate}/${travelClass}?ucs=r737jm&sort=bestflight_a
 	`
 	window.location.href = url;
 	console.log(url);
 }
+
+
+
+/*
+**PRIORITY LIST**
+1. FIX THE LAYOUT
+2. REFACTOR THE DATA INTO OBJECTS
+3. IMPROVE GENERAL FUNCTIONALITY AND VALUE CONTROL
+*/

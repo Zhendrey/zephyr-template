@@ -413,32 +413,39 @@ button.reverse-button img{
 .select{
 	align-self: flex-start;
 }
+/*FIX IT*/
 .form__body{
 	display: flex;
-	justify-content: flex-start;
-	align-items: flex-start;
-	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 	gap: 30px;
 	overflow: auto;
+}
+.form__body section{
+	margin-bottom: 0;
 }
 #banner .form__message{
 	font-size: 20px;
 	font-style: italic;
 }
 .form__body > *{
-	justify-content: inherit;
-	flex-wrap: inherit;
 	gap: inherit;
 }
 .direction {
 	display: flex;
 	align-items: flex-start;
 }
+@media (max-width: 601px) {
+	.form__body *{
+		flex-direction: inherit;
+	}
+}
 @media(min-width: 1160px){
 	.form__body{
-		flex-wrap: nowrap;
+		flex-direction: row;
+		align-items: flex-start;
 	}
-
 }
 .direction__results{
 	margin-bottom: 10px;
