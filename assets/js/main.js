@@ -349,9 +349,10 @@ function changeInput(e,obj){
 	.replace(month,'')
 	.slice(2,value.indexOf('-'));
 
-	obj[name].year = year;
-	obj[name].month = month;
-	obj[name].day = day;
+	obj[name].year = Number(year);
+	obj[name].month = Number(month);
+	obj[name].day = Number(day);
+	console.log(obj[name]);
 
 	return (
 		obj["today"].day < obj["tommorow"].day 
@@ -372,6 +373,16 @@ function checkInputs(e){
 const banner = document.querySelector("#banner");
 const dropdown = document.querySelector(".dropdown");
 const passangerButton = document.querySelector(".passanger__button");
+const decrease = document.querySelectorAll(".category__decrease");
+const increase = document.querySelectorAll(".category__increase");
+const categoryInput = document.querySelectorAll(".category__input");
+
+decrease.forEach((btn, index)=>btn.addEventListener("click", (e)=>{
+	categoryInput[index].value > 0 ?  Number(categoryInput[index].value--) : categoryInput[index].value
+}))
+increase.forEach((btn, index)=>btn.addEventListener("click", (e)=>{
+	Number(categoryInput[index].value++)
+}))
 
 const isClicked = new MutationObserver((mutations)=>{
 	mutations.forEach(mutation=>console.log(mutation.target))
@@ -379,9 +390,14 @@ const isClicked = new MutationObserver((mutations)=>{
 
 isClicked.observe(dropdown, {subtree: true, childList: true})
 
-banner.addEventListener("click", (e)=>{
-	if(!e.target.classList.contains("passanger__button")) dropdown.classList.remove("active")
-	else dropdown.classList.toggle("active");
+window.addEventListener("click", (e)=>{
+	const targetElem = e.target.closest('.passanger__button') || e.target.querySelector('.passanger__button')
+	console.log(targetElem);
+	if(e.target !== targetElem && e.target.closest(".passanger__button")){
+		dropdown.classList.remove("active")
+	}else{
+		dropdown.classList.add("active")
+	}
 }
 )
 
@@ -394,14 +410,14 @@ function searchAtKayak(e){
 	const origin = formData.get("from");
 	const destination = formData.get("to");
 	const initDepature = formData.get("today");
-	const returnDate = formData.get("tomorrow");
+	const returnDate = formData.get("tommorow");
 	const adults = formData.get("adults");
 	const children = formData.get("children");
 	const infants = formData.get("infants");
 	const travelClass = formData.get("class");
 	const bags = formData.get("bags");
 
-
+	console.log(destination);
 	const url = `
 	https://www.kayak.com/flights/${origin}-${destination}/${initDepature}/${returnDate}/${travelClass}s?ucs=r737jm&sort=bestflight_a
 	`

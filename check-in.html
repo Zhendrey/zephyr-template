@@ -65,7 +65,9 @@
 													<svg viewBox="0 0 200 200" width="1.25em" height="1.25em" xmlns="http://www.w3.org/2000/svg" class="z8m1-icon" role="presentation"><path d="M56.238 154.801c-25.271-30.326-30.335-33.201-25-39.603l25-30l11.523 9.603L53.013 112.5H120v15H53.013l14.749 17.699l-11.524 9.602zm86.524-40l-11.523-9.603L145.987 87.5H80v-15h65.987l-14.749-17.699l11.523-9.603l25 30c5.335 6.403.272 9.278-24.999 39.603z"></path></svg>
 												</button>
 												<label for="direction"  class="form__direction form__direction-to">
-													<input required placeholder="To?" class="direction-to direction__input main-input" name="to" type="text">
+													<div class="direction__results">
+														<input required placeholder="To?" class="direction-to direction__input main-input" name="to" type="text">
+													</div>
 													<div class="direction__airports airports airports-arrival">
 														<ul class="airports__list">
 														</ul>
@@ -87,27 +89,27 @@
 														<h4 class="category__title">Children/Teens</h4>
 														<p class="category__description">Age 2-17</p>
 														<div class="category__counter">
-															<button class="category__decrease">-</button>
+															<button type="button" class="category__decrease">-</button>
 															<input type="text" name="children" value="1" class="category__input" readonly>
-															<button class="category__increase">+</button>
+															<button type="button" class="category__increase">+</button>
 														</div>
 													</div>
 													<div class="dropdown__category category">
 														<h4 class="category__title">Infants</h4>
 														<p class="category__description">Under 2</p>
 														<div class="category__counter">
-															<button class="category__decrease">-</button>
+															<button type="button" class="category__decrease">-</button>
 															<input type="text" name="infants" value="1" class="category__input" readonly>
-															<button class="category__increase">+</button>
+															<button type="button" class="category__increase">+</button>
 														</div>
 													</div>
 													<div class="dropdown__category category">
 														<h4 class="category__title">Adults</h4>
 														<p class="category__description">Age 18+</p>
 														<div class="category__counter">
-															<button class="category__decrease">-</button>
+															<button type="button" class="category__decrease">-</button>
 															<input type="text" name="adults" value="1" class="category__input" readonly>
-															<button class="category__increase">+</button>
+															<button type="button" class="category__increase">+</button>
 														</div>
 													</div>
 													<div class="dropdown__category category">
@@ -134,9 +136,9 @@
 													<div class="dropdown__category category">
 														<h3 class="category__title category__title-big">Checked Bags</h3>
 														<div class="category__counter">
-															<button class="category__decrease">-</button>
+															<button type="button" class="category__decrease">-</button>
 															<input type="text" name="bags" value="1" class="category__input" readonly>
-															<button class="category__increase">+</button>
+															<button type="button" class="category__increase">+</button>
 														</div>
 													</div>
 													<button type="button" class="dropdown__apply">Apply</button>
