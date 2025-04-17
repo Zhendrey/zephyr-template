@@ -180,6 +180,13 @@ function isValue(){
 
 
 //timezone(City), iata, airport
+
+function addAirportsList(event){
+	const airportsEl = event.target.closest(`label[for="direction"]`).querySelector(".airports");
+	const [...airportItem] = airportsEl.querySelectorAll(".airports__item");
+	airportsEl.classList.add("active")
+	airportItem.forEach(item=>item.classList.add("active"))
+}
 async function findDepartureAirport(event){
 	const airportData = await getAirlinesData('airports');
 	const data = airportData[0].data;
@@ -199,7 +206,8 @@ async function findDepartureAirport(event){
 		return isSatisfied.some(condition=>condition)
 	}).map(({departure})=>departure.airport)
 	
-	airportsEl.classList.toggle("active", value !== ' ' && value !== '' && matchedAirport.length)
+	const regExp = /\w{1,}/
+	airportsEl.classList.toggle("active", regExp.test(value) && matchedAirport.length)
 
 	airportItem.forEach((item, index)=>{
 		if(!matchedAirport.includes(airportName[index].textContent)){
@@ -209,8 +217,9 @@ async function findDepartureAirport(event){
 		}
 	})
 }
-rest.forEach(input=>input.addEventListener("input", findDepartureAirport))
 
+rest.forEach(input=>input.addEventListener("focus", addAirportsList))
+rest.forEach(input=>input.addEventListener("input", findDepartureAirport))
 
 function manageItem(action, parent, content,  className, el){
 	const [timezone, iata, airport] = content;
@@ -287,10 +296,14 @@ function pasteSelectedAirport(parent, airportName){
 
 //REVERSE ORDER
 function reverseOrder(){
-	from.classList.toggle("reversed");
-	to.classList.toggle("reversed");
-	from.querySelector('input').placeholder = from.classList.contains("reversed") ? 'To?' : 'From?'
-	to.querySelector('input').placeholder = to.classList.contains("reversed") ? 'From?' : 'To?'
+	const [depart, dest] = document.querySelectorAll(".selected-airport");
+	const fromValue = from.querySelector("input").value;
+	const toValue = to.querySelector("input").value;
+	from.querySelector("input").value = toValue;
+	to.querySelector("input").value = fromValue;
+	depart.textContent = toValue;
+	dest.textContent = fromValue;
+	console.log(from);
 }
 
 reversedBtn.addEventListener("click", reverseOrder)
@@ -354,11 +367,12 @@ function changeInput(e,obj){
 	obj[name].day = Number(day);
 	console.log(obj[name]);
 
-	return (
-		obj["today"].day < obj["tommorow"].day 
-	&&
-		obj["tommorow"].day > obj["today"].day
-	)
+	const isYearOk = new Date().getFullYear() == year ? true : false;
+	const isMonthOk = new Date().getMonth() >= month ? obj["today"].month <= obj["tommorow"].month : false;
+	const areDaysEqual = obj["today"].month == obj["tommorow"].month ?  obj["today"].day <= obj["tommorow"].day : true;
+
+	obj[name].valid = isYearOk && isMonthOk && areDaysEqual;
+	return obj[name].valid;
 }
 function checkInputs(e){
 	const isDateValid = changeInput(e,datesObj);

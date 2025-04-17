@@ -2156,6 +2156,7 @@ input::-moz-focus-inner {
 		font-weight: 800;
 		font-size: 0.8em;
 		color: #444;
+		flex: 1 1 33%;
 	}
 
 		form input[type="text"]:focus,
