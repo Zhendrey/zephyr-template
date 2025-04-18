@@ -334,7 +334,7 @@ const datesObj = {
 		day: ++day,
 		valid: true,
 	},
-};
+}
 
 const today = `${datesObj.today.year}-${datesObj.today.month}-${datesObj.today.day}`;
 const tomorrow = `${datesObj.tommorow.year}-${datesObj.tommorow.month}-${datesObj.tommorow.day}`;
@@ -345,43 +345,57 @@ const initReturn = tomorrow;
 departureDate.value = initDepature;
 returnDate.value = initReturn;
 
-dates.forEach(date=>date.addEventListener("input", checkInputs));
-
-function changeInput(e,obj){
-	const value = e.target.value;
-	const name = e.target.name;
-
+function changeInput(event){
+	const value = event.target.value;
+	const name = event.target.name;
 	const year = value.slice(0,value.indexOf('-'))
-
-	const month = value
-	.replace(year,'')
-	.slice(1,value.indexOf('-') - 1);
-
-	const day = value
-	.replace(year,'')
-	.replace(month,'')
-	.slice(2,value.indexOf('-'));
-
-	obj[name].year = Number(year);
-	obj[name].month = Number(month);
-	obj[name].day = Number(day);
-	console.log(obj[name]);
-
-	const isYearOk = new Date().getFullYear() == year ? true : false;
-	const isMonthOk = new Date().getMonth() >= month ? obj["today"].month <= obj["tommorow"].month : false;
-	const areDaysEqual = obj["today"].month == obj["tommorow"].month ?  obj["today"].day <= obj["tommorow"].day : true;
-
-	obj[name].valid = isYearOk && isMonthOk && areDaysEqual;
-	return obj[name].valid;
+	
+		const month = value
+		.replace(year,'')
+		.slice(1,value.indexOf('-') - 1);
+	
+		const day = value
+		.replace(year,'')
+		.replace(month,'')
+		.slice(2,value.indexOf('-'));
+	
+	datesObj[name].year = Number(year);
+	datesObj[name].month = Number(month);
+	datesObj[name].day = Number(day);
+	checkInputs(event, datesObj, name);
 }
-function checkInputs(e){
-	const isDateValid = changeInput(e,datesObj);
-	if(!isDateValid) {
-		dates.forEach(date=>date.classList.add("invalid"));
-	}else{
-		dates.forEach(date=>date.classList.remove("invalid"));
+function checkInputs(event, {today, tommorow}, name){
+	const targetElem = event.target.closest(`input[name=${name}]`);
+	const parentElem = event.target.closest(`label[for="dates"]`);
+	const datesError = parentElem.querySelector(".dates__error");
+	const dates = {today, tommorow}
+	const isDayOk = initMonth < today.month ? true : today.day <= tommorow.day;
+	const isMonthOk = initMonth <= dates['today'].month ? dates['today'].month <= dates['tommorow'].month : false;
+	const isYearOk = year == dates[name].year
+	dates[name].valid = isDayOk && isMonthOk && isYearOk;
+	
+	console.log(datesError);
+	switch (true) {
+		case !isDayOk:
+			datesError.textContent = "Please, provide an appropriate date!"
+			break;
+		case !isMonthOk:
+			datesError.textContent = `You cannot view flights from this past or future!`
+			break;
+		case !isYearOk:
+			datesError.textContent = `You can only view flights of this year!`
+			break;
+	
+		default:
+			break;
 	}
+	targetElem.classList.toggle("invalid", !dates[name].valid)
 }
+
+
+dates.forEach(date=>date.addEventListener("input", changeInput))
+
+
 
 //PASSANGER
 const banner = document.querySelector("#banner");
@@ -405,13 +419,8 @@ const isClicked = new MutationObserver((mutations)=>{
 isClicked.observe(dropdown, {subtree: true, childList: true})
 
 window.addEventListener("click", (e)=>{
-	const targetElem = e.target.closest('.passanger__button') || e.target.querySelector('.passanger__button')
-	console.log(targetElem);
-	if(e.target !== targetElem){
-		dropdown.classList.remove("active")
-	}else{
-		dropdown.classList.add("active")
-	}
+	const targetElem = e.target.closest('.passanger')
+	dropdown.classList.toggle("active", targetElem)
 }
 )
 

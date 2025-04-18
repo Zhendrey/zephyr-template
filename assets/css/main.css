@@ -17,7 +17,10 @@
 }
 
 /* CLASSES */
-
+.active{
+	display: block;
+	opacity: 1;
+}
 
 /* HEADER */
 .header{
@@ -467,6 +470,20 @@ button.reverse-button img{
 .dates *{
 	border: none;
 }
+#banner .dates__error{
+	color: red;
+	text-decoration: underline;
+	font-family: "Inter";
+	font-size: 1rem;
+	display: none;
+	opacity: 0;
+	transition-property: opacity;
+	transition-duration: 0.7s;
+}
+#banner .dates label:has(input.invalid) .dates__error{
+	display: block;
+	opacity: 1;
+}
 .departure-date {
 }
 .departure-date input {
@@ -488,11 +505,6 @@ button.reverse-button img{
 }
 .form input[type="date"]{
 	position: relative;
-}
-.form input[type="date"].invalid::before{
-	content: 'Wrong date format! Please, pick another date!';
-	color: red;
-	font-weight: bold;
 }
 .return-date {
 }
