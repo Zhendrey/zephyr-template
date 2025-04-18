@@ -374,7 +374,6 @@ function checkInputs(event, {today, tommorow}, name){
 	const isYearOk = year == dates[name].year
 	dates[name].valid = isDayOk && isMonthOk && isYearOk;
 	
-	console.log(datesError);
 	switch (true) {
 		case !isDayOk:
 			datesError.textContent = "Please, provide an appropriate date!"
@@ -404,25 +403,60 @@ const passangerButton = document.querySelector(".passanger__button");
 const decrease = document.querySelectorAll(".category__decrease");
 const increase = document.querySelectorAll(".category__increase");
 const categoryInput = document.querySelectorAll(".category__input");
+const applyBtn = document.querySelector(".dropdown__apply");
 
-decrease.forEach((btn, index)=>btn.addEventListener("click", (e)=>{
-	categoryInput[index].value > 0 ?  Number(categoryInput[index].value--) : categoryInput[index].value
-}))
-increase.forEach((btn, index)=>btn.addEventListener("click", (e)=>{
-	Number(categoryInput[index].value++)
-}))
+const passangerObj = {
+	'adults': 1,
+	'students': 1,
+	'seniors': 1,
+	'youths': 1,
+	'children': 1,
+	'toddlers': 1,
+	'infants': 1,
+	'class': 'economy',
+	'bags': 1,
+}
 
-const isClicked = new MutationObserver((mutations)=>{
-	mutations.forEach(mutation=>console.log(mutation.target))
-})
+function initPassanger(parentElem, changedCategory){
+	const numberElem =  parentElem.querySelector(".category__input");
+	numberElem.value = changedCategory;
+	numberElem.checked = true;
+	console.log(numberElem);
+}
+function changeNum(event){
+	const targetElem = event.target;
+	const parentElem = targetElem.closest(`.category`);
+	const categoryElem = parentElem.querySelector(".category__title");
+	const category = categoryElem.textContent.toLowerCase();
 
-isClicked.observe(dropdown, {subtree: true, childList: true})
+	if(targetElem.classList.contains("category__increase") && typeof passangerObj[category] == 'number'){
+		passangerObj[category]++
+	}else if(targetElem.classList.contains("category__decrease") && typeof passangerObj[category] == 'number'){
+		passangerObj[category]--
+	}
+	initPassanger(parentElem, passangerObj[category]);
+}
+function applyChoices(event){
+	dropdown.classList.remove("active")
+}
+
+applyBtn.addEventListener("click", applyChoices)
+
+decrease.forEach(btn=>btn.addEventListener("click", changeNum))
+increase.forEach(btn=>btn.addEventListener("click", changeNum))
+
 
 window.addEventListener("click", (e)=>{
 	const targetElem = e.target.closest('.passanger')
-	dropdown.classList.toggle("active", targetElem)
+	if(e.target.classList.contains("dropdown__apply")){
+		dropdown.classList.remove("active")
+	}else{
+		dropdown.classList.toggle("active", targetElem)
+	}
 }
 )
+
+
 
 //SEARCH FOR FLIGHTS (REDIRECT TO KAYAK.COM/FLIGHTS)
 
@@ -444,16 +478,16 @@ function searchAtKayak(e){
 
 	console.log(initDepature);
 	const url = `
-	https://www.kayak.com/flights/${origin}-${destination}/${initDepature}/${returnDate}/${travelClass}?ucs=r737jm&sort=bestflight_a
+	https://www.kayak.com/flights/${origin}-${destination}/${initDepature}/${returnDate}/${travelClass}
 	`
 	window.location.href = url;
 	console.log(url);
 }
 
-
+//https://www.kayak.com/flights/JFK-SEA/2025-04-17/2025-04-18/${adults}adults/${senionrs}seniors/${students}students/children-${toddlers}S-${infants}L-${children}-${youth}?ucs=14ojkuq
 
 /*
 **PRIORITY LIST**
-1. REFACTOR THE DATA INTO OBJECTS
-2. IMPROVE GENERAL FUNCTIONALITY AND VALUE CONTROL
+1. REFACTOR THE DATA INTO OBJECTS (1/2 done)
+2. IMPROVE GENERAL FUNCTIONALITY AND VALUE CONTROL (1/2 done)
 */

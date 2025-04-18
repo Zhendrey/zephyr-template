@@ -52,3 +52,10 @@ console.log(matchedAirport);
 	}
 
 dates.forEach(date=>date.addEventListener("input", checkInputs));
+
+decrease.forEach((btn, index)=>btn.addEventListener("click", (e)=>{
+	categoryInput[index].value > 0 ?  Number(categoryInput[index].value--) : categoryInput[index].value
+}))
+increase.forEach((btn, index)=>btn.addEventListener("click", (e)=>{
+	Number(categoryInput[index].value++)
+}))

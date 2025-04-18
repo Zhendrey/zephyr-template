@@ -466,6 +466,7 @@ button.reverse-button img{
 }
 .dates{
 	display: flex;
+	align-items: center;
 }
 .dates *{
 	border: none;
@@ -477,6 +478,7 @@ button.reverse-button img{
 	font-size: 1rem;
 	display: none;
 	opacity: 0;
+	margin-bottom: 10px;
 	transition-property: opacity;
 	transition-duration: 0.7s;
 }
@@ -675,29 +677,39 @@ h4.item__title {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
+	gap: 8px;
 }
 .dropdown__category:not(:last-child){
-	margin-bottom: 15px;
+	margin-bottom: 30px;
 }
 .category {
 }
 .category__title {
 	font-size: 1.25rem;
 	font-weight: bold;
+	line-height: 1;
 }
 #banner .category__description {
 	font-size: 0.875rem;
 }
 .category__counter {
 	display: flex;
-	gap: 8px;
 }
 button.category__decrease,
 button.category__increase {
 	padding: 10px;
+	flex: 1 1 33%;
 }
-.category__counter span{
-	font-size: 14px;
+.category__input{
+	font-size: 16px;
+	border: none;
+	min-width: 0;
+	flex-basis: 50px;
+	font-weight: bold;
+	text-align: center;
+}
+.category__input[type="radio"]{
+	cursor: pointer;
 }
 .category__increase {
 }
