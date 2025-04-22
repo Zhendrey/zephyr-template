@@ -379,7 +379,7 @@ function checkInputs(event, {today, tommorow}, name){
 			datesError.textContent = "Please, provide an appropriate date!"
 			break;
 		case !isMonthOk:
-			datesError.textContent = `You cannot view flights from this past or future!`
+			datesError.textContent = `You cannot view flights from the past!`
 			break;
 		case !isYearOk:
 			datesError.textContent = `You can only view flights of this year!`
