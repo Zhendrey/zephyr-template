@@ -369,7 +369,7 @@ function checkInputs(event, {today, tommorow}, name){
 	const parentElem = event.target.closest(`label[for="dates"]`);
 	const datesError = parentElem.querySelector(".dates__error");
 	const dates = {today, tommorow}
-	const isDayOk = initMonth < today.month ? true : today.day <= tommorow.day;
+	const isDayOk = today.month < initMonth ? true : today.day <= tommorow.day;
 	const isMonthOk = initMonth <= dates['today'].month ? dates['today'].month <= dates['tommorow'].month : false;
 	const isYearOk = year == dates[name].year
 	dates[name].valid = isDayOk && isMonthOk && isYearOk;
