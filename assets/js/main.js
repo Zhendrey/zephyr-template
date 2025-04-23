@@ -369,7 +369,7 @@ function checkInputs(event, {today, tommorow}, name){
 	const parentElem = event.target.closest(`label[for="dates"]`);
 	const datesError = parentElem.querySelector(".dates__error");
 	const dates = {today, tommorow}
-	const isDayOk = initMonth < today.month ? true : today.day <= tommorow.day;
+	const isDayOk = today.month < tommorow.month ? true : today.day <= tommorow.day;
 	const isMonthOk = initMonth <= dates['today'].month ? dates['today'].month <= dates['tommorow'].month : false;
 	const isYearOk = year == dates[name].year
 	dates[name].valid = isDayOk && isMonthOk && isYearOk;
@@ -379,7 +379,7 @@ function checkInputs(event, {today, tommorow}, name){
 			datesError.textContent = "Please, provide an appropriate date!"
 			break;
 		case !isMonthOk:
-			datesError.textContent = `You cannot view flights from this past or future!`
+			datesError.textContent = `You cannot view flights from the past!`
 			break;
 		case !isYearOk:
 			datesError.textContent = `You can only view flights of this year!`
