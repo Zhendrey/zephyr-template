@@ -682,6 +682,9 @@ h4.item__title {
 .dropdown__category:not(:last-child){
 	margin-bottom: 30px;
 }
+.dropdown__category *:focus{
+	border: 2px solid #000000;
+}
 .category {
 }
 .category__title {
@@ -912,6 +915,7 @@ input::-moz-focus-inner {
 	.container {
 		margin: 0 auto;
 		max-width: 100%;
+		padding: 15px;
 	}
 		@media screen and (max-width: 736px) {
 
@@ -2593,9 +2597,6 @@ section.widget ul.style2 li{
 	#header-wrapper.fixed{
 		padding: 0;
 		background-color: white;
-	}
-	#header-wrapper.fixed #header{
-		padding: 15px 0;
 	}
 
 	#features-wrapper {

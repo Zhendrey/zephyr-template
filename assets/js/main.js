@@ -178,6 +178,9 @@ function isValue(){
 	}
 })()
 
+//TRIP (Round/One Way)
+const trip = document.querySelector("select#trip");
+const [round, oneWay] = trip;
 
 //timezone(City), iata, airport
 
@@ -261,37 +264,29 @@ airportsList.forEach(item=>item.addEventListener("click", selectAirport))
 async function selectAirport(event){
 	const formEl = event.target.closest("form");
 	const targetElem = event.target.closest(".airports__item button");
-	const input = event.target.closest(`.form__direction`).querySelector("input");
-	pasteSelectedAirport(targetElem.closest("label"), targetElem.textContent);
+	const formDirection = event.target.closest(".form__direction");
+	const input = formDirection.querySelector("input");
 	const airportText = event.target.closest(".item__button").querySelector(".item__body").querySelector(".item__abriviation").textContent;
-	console.log(airportText);
+	pasteSelectedAirport(targetElem.closest("label"), airportText);
+	const selectedAirports = formDirection.querySelectorAll("button.selected-airport");
+	if(selectedAirports.length > 1){
+		deletePreviousAirport(selectedAirports);
+	}
 	input.value = airportText;
 }
 
 function pasteSelectedAirport(parent, airportName){
-	const selectedAirport = document.createElement("button");
-	const selectedAirport_NAME = document.createElement("span");
-	const selectedAirport_REMOVE = document.createElement("a");
-	const removeImage = document.createElement("img");
-	selectedAirport.classList.add("selected-airport");
-	selectedAirport.type = 'button'
-	selectedAirport.classList.add("airports__selected-airport");
-	selectedAirport_NAME.classList.add("selected-airport__name");
-	selectedAirport_NAME.textContent = airportName;
-	selectedAirport_REMOVE.href = '#';
-	selectedAirport_REMOVE.classList.add("selected-airport__remove");
-	selectedAirport_REMOVE.classList.add("icon");
-	selectedAirport_REMOVE.classList.add("icon-cross");
-	parent.prepend(selectedAirport);
-	selectedAirport.append(selectedAirport_NAME);
-	selectedAirport.append(selectedAirport_REMOVE);
-
-	parent.prepend(selectedAirport);
-	// selectedAirport.insertAdjacentHTML("beforeend", 
-	// 	`
-
-	// 	`
-	// )
+	parent.insertAdjacentHTML("afterbegin", 
+		`
+		<button class="selected-airport airports__selected-airport" type="button">
+			<span class="selected-airport__name">${airportName}</span>
+			<a href="#" class="selected-airport__remove icon icon-cross"></a>
+		</button>
+		`
+	)
+}
+function deletePreviousAirport(airports){
+	airports[airports.length-1].remove()
 }
 
 //REVERSE ORDER
@@ -336,6 +331,27 @@ const datesObj = {
 	},
 }
 
+
+function isOneWay(){
+	return oneWay.selected
+}
+isOneWay();
+
+const removed = datesObj.tommorow;
+
+trip.addEventListener("change", function(e){
+	console.log(e);
+	const oneWaySelected = isOneWay();
+	if(oneWaySelected){
+		returnDate.closest("label").style.display = 'none'
+		datesObj.tommorow = ''
+	}
+	else {
+		returnDate.closest("label").style.display = 'block'
+		datesObj.tommorow = removed;
+	}
+})
+
 const today = `${datesObj.today.year}-${datesObj.today.month}-${datesObj.today.day}`;
 const tomorrow = `${datesObj.tommorow.year}-${datesObj.tommorow.month}-${datesObj.tommorow.day}`;
 
@@ -369,9 +385,14 @@ function checkInputs(event, {today, tommorow}, name){
 	const parentElem = event.target.closest(`label[for="dates"]`);
 	const datesError = parentElem.querySelector(".dates__error");
 	const dates = {today, tommorow}
-	const isDayOk = initMonth < today.month ? true : today.day <= tommorow.day;
-	const isMonthOk = initMonth <= dates['today'].month ? dates['today'].month <= dates['tommorow'].month : false;
-	const isYearOk = year == dates[name].year
+	let isDayOk = initMonth < today.month ? true : today.day <= tommorow.day;
+	let isMonthOk = initMonth <= dates['today'].month ? dates['today'].month <= dates['tommorow'].month : false;
+	const isYearOk = year == dates[name].year;
+
+	if(isOneWay()){
+		console.log('one way trip');
+		isMonthOk = today.month == initMonth;
+	}
 	dates[name].valid = isDayOk && isMonthOk && isYearOk;
 	
 	switch (true) {
@@ -395,33 +416,38 @@ function checkInputs(event, {today, tommorow}, name){
 dates.forEach(date=>date.addEventListener("input", changeInput))
 
 
-
 //PASSANGER
 const banner = document.querySelector("#banner");
 const dropdown = document.querySelector(".dropdown");
+const category = document.querySelectorAll(".category");
 const passangerButton = document.querySelector(".passanger__button");
 const decrease = document.querySelectorAll(".category__decrease");
 const increase = document.querySelectorAll(".category__increase");
 const categoryInput = document.querySelectorAll(".category__input");
 const applyBtn = document.querySelector(".dropdown__apply");
 
+category.forEach(category=>category.id = category.querySelector(".category__title").textContent.toLowerCase())
+
 const passangerObj = {
 	'adults': 1,
-	'students': 1,
-	'seniors': 1,
-	'youths': 1,
-	'children': 1,
-	'toddlers': 1,
-	'infants': 1,
+	'students': 0,
+	'seniors': 0,
+	'youths': 0,
+	'children': 0,
+	'toddlers': 0,
+	'infants': 0,
 	'class': 'economy',
-	'bags': 1,
+	'bags': 0,
 }
+for (const key in passangerObj) {
+	initPassanger(document.getElementById(`${key}`), passangerObj[key])
+}
+displayChoices();
 
 function initPassanger(parentElem, changedCategory){
 	const numberElem =  parentElem.querySelector(".category__input");
 	numberElem.value = changedCategory;
 	numberElem.checked = true;
-	console.log(numberElem);
 }
 function changeNum(event){
 	const targetElem = event.target;
@@ -432,11 +458,31 @@ function changeNum(event){
 	if(targetElem.classList.contains("category__increase") && typeof passangerObj[category] == 'number'){
 		passangerObj[category]++
 	}else if(targetElem.classList.contains("category__decrease") && typeof passangerObj[category] == 'number'){
-		passangerObj[category]--
+		passangerObj[category] > 0 ? passangerObj[category]-- : 0
 	}
+	const totalPassangers = calcTotalPassangers(passangerObj);
 	initPassanger(parentElem, passangerObj[category]);
 }
+function calcTotalPassangers(obj){
+	const nums = [];
+	for (const key in obj) {
+		if(typeof obj[key] == 'number') nums.push(obj[key])
+	}
+	const total = nums.reduce((storage, currentValue)=>{
+		return storage + currentValue
+	}, 0)
+	return total;
+}
+function displayChoices(){
+	const totalPassangers = calcTotalPassangers(passangerObj);
+	const passangerStr = totalPassangers == 1 ? `${totalPassangers} passanger` : `${totalPassangers} passangers`
+	passangerButton.textContent = `${passangerStr}, ${passangerObj.class}, ${passangerObj.bags} bags`
+}
 function applyChoices(event){
+	event.preventDefault();
+	const checkedClass = [...document.querySelectorAll(`input[name="class"]`)].filter(input=>input.checked)
+	passangerObj.class = checkedClass[0].value;
+	displayChoices();
 	dropdown.classList.remove("active")
 }
 
@@ -467,18 +513,25 @@ function searchAtKayak(e){
 	const origin = formData.get("from");
 	const destination = formData.get("to");
 	const initDepature = formData.get("today");
-	const returnDate = formData.get("tommorow");
-	const adults = formData.get("adults");
-	const children = formData.get("children");
-	const infants = formData.get("infants");
-	const travelClass = formData.get("class");
-	const bags = formData.get("bags");
+	const returnDate = dates.tommorow;
+	const {adults, seniors, youths, students, toddlers, children, infants, bags} = passangerObj;
+	// const adults = formData.get("adults");
+	// const children = formData.get("children");
+	// const infants = formData.get("infants");
+	// const travelClass = formData.get("class");
+	// const bags = formData.get("bags");
 
 	console.log(destination);
 
 	console.log(initDepature);
+
+	const underaged = [infants, toddlers, children, youths];
+	const underagedTotal = underaged.reduce((storage, currentValue)=>{
+		return storage + currentValue
+	}, 0);
+	const childrenStr = underagedTotal > 0 ? `children-${toddlers}S-${infants}L-${children}-${youths}` : ''
 	const url = `
-	https://www.kayak.com/flights/${origin}-${destination}/${initDepature}/${returnDate}/${travelClass}
+	https://www.kayak.com/flights/${origin}-${destination}/${initDepature}/${returnDate}/${adults}adults/${seniors}seniors/${students}students/${passangerObj.class}/${childrenStr}
 	`
 	window.location.href = url;
 	console.log(url);
