@@ -699,8 +699,12 @@ h4.item__title {
 }
 .dropdown button{
 	width: auto;
-	align-self: flex-end;
+	align-self: center;
 	padding: 5px;
+}
+.dropdown button:has(.icon){
+	align-self: flex-end;
+	background: transparent;
 }
 .dropdown__category {
 	display: flex;
@@ -724,8 +728,13 @@ h4.item__title {
 #banner .category__description {
 	font-size: 0.875rem;
 }
-.category__counter {
+.category__counter{
 	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+button.dropdown__apply{
+	padding: 10px 15px;
 }
 button.category__decrease,
 button.category__increase {
