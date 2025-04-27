@@ -113,6 +113,19 @@ h2{
 	color: var(--dark-red);
 	font-weight: bold;
 }
+.text-style_blue{
+	font-family: inherit;
+	text-transform: capitalize;
+	color: var(--dark-blue);
+	font-weight: bold;
+}
+.text-style_blue.underline{
+	font-family: inherit;
+	text-transform: capitalize;
+	color: var(--dark-blue);
+	font-weight: bold;
+	text-decoration: underline;
+}
 .fz-medium{
 	font-size: 1.25rem;
 }
@@ -134,7 +147,7 @@ div.row__content {
 	gap: 1rem;
 	position: relative;
 	overflow: hidden;
-	background-color: rgba(0, 0, 0, 0.7);
+	background-color: rgba(0, 0, 0, 0.8);
 	padding: 25px;
 }
 .row__image{
@@ -175,17 +188,25 @@ div.row__content {
 	opacity: 0;
 }
 .card img{
-	transition-property: box-shadow;
-	transition-property: 0.5s;
-	box-shadow: 0 0 0 0 none;
 	cursor: pointer;
 }
-.card > *{
+/* .box > *{
+	transition-property: inherit;
+	transition-duration: inherit;
+} */
+.box{
+	transition-property: transform background;
+	transition-duration: 0.5s;
+}
+.box .inner{
 	transition-property: inherit;
 	transition-duration: inherit;
 }
-.card > *:hover{
-	transform: scale(1.03);
+.box:hover{
+	transform: scale(1.01);
+}
+.box .inner:hover{
+	background-color: rgb(245, 245, 245);
 }
 .card.active{
 	opacity: 1;
