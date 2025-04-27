@@ -190,10 +190,6 @@ div.row__content {
 .card img{
 	cursor: pointer;
 }
-/* .box > *{
-	transition-property: inherit;
-	transition-duration: inherit;
-} */
 .box{
 	transition-property: transform background;
 	transition-duration: 0.5s;
@@ -202,7 +198,7 @@ div.row__content {
 	transition-property: inherit;
 	transition-duration: inherit;
 }
-.box:hover{
+.box:hover:not(.box.container){
 	transform: scale(1.01);
 }
 .box .inner:hover{
