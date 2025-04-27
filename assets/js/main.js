@@ -494,7 +494,7 @@ increase.forEach(btn=>btn.addEventListener("click", changeNum))
 
 window.addEventListener("click", (e)=>{
 	const targetElem = e.target.closest('.passanger')
-	if(e.target.classList.contains("dropdown__apply")){
+	if(e.target.classList.contains("dropdown__apply") || e.target.classList.contains('icon')){
 		dropdown.classList.remove("active")
 	}else{
 		dropdown.classList.toggle("active", targetElem)

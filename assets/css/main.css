@@ -656,22 +656,35 @@ h4.item__title {
 	text-decoration: underline;
 }
 .passanger__dropdown {
-	position: absolute;
-	left: 0;
-	top: 0;
-	width: auto;
-	height: auto;
-	transform: translateX(-45%);
 	z-index: 2;
 	box-shadow: 0 0 5px 0 rgba(111, 110, 110, 0.402);
 	background-color: white;
 	padding: 10px;
+	border: 1px solid #000000;
+}
+
+@media (min-width: 603px) {
+	.passanger__dropdown{
+		position: absolute;
+		transform: translateX(-45%);
+		left: 0;
+		top: 0;
+		width: auto;
+		height: auto;
+	}
 }
 .dropdown {
 	display: none;
 }
 .dropdown.active{
-	display: block;
+	display: flex;
+	flex-direction: column;
+}
+.dropdown button{
+	width: auto;
+	align-self: flex-end;
+	padding: 5px;
+	background: transparent;
 }
 .dropdown__category {
 	display: flex;
@@ -729,6 +742,22 @@ button.category__increase {
 div#page-wrapper{
 	padding-inline: 15px;
 }
+
+.hotel__link a{
+	color: #0004D8;
+	text-decoration: none;
+}
+.hotel__link a:hover{
+	text-decoration: underline;
+}
+.flights__link a{
+	color: #0004D8;
+	text-decoration: none;
+}
+.flights__link a:hover{
+	text-decoration: underline;
+}
+
 
 #nav ul li a{
 	color: linear-gradient(to right, var(--dark-blue) 0%, var(--dark-red) 100%);
