@@ -701,7 +701,6 @@ h4.item__title {
 	width: auto;
 	align-self: flex-end;
 	padding: 5px;
-	background: transparent;
 }
 .dropdown__category {
 	display: flex;
