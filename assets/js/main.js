@@ -321,12 +321,14 @@ const datesObj = {
 		year: year,
 		month: month,
 		day: day,
+		date: `${year}-${month}-${day}`,
 		valid: true,
 	},
 	"tommorow": {
 		year: year,
 		month: month,
 		day: ++day,
+		date: `${year}-${month}-${day}`,
 		valid: true,
 	},
 }
@@ -378,6 +380,7 @@ function changeInput(event){
 	datesObj[name].year = Number(year);
 	datesObj[name].month = Number(month);
 	datesObj[name].day = Number(day);
+	datesObj[name].date = `${year}-${month}-${day}`
 	checkInputs(event, datesObj, name);
 }
 function checkInputs(event, {today, tommorow}, name){
@@ -512,19 +515,9 @@ function searchAtKayak(e){
 	const formData = new FormData(document.querySelector(".form"));
 	const origin = formData.get("from");
 	const destination = formData.get("to");
-	const initDepature = formData.get("today");
-	const returnDate = dates.tommorow;
+	const initDepature = datesObj.today.date;
+	const returnDate = datesObj.tommorow.date || '';
 	const {adults, seniors, youths, students, toddlers, children, infants, bags} = passangerObj;
-	// const adults = formData.get("adults");
-	// const children = formData.get("children");
-	// const infants = formData.get("infants");
-	// const travelClass = formData.get("class");
-	// const bags = formData.get("bags");
-
-	console.log(destination);
-
-	console.log(initDepature);
-
 	const underaged = [infants, toddlers, children, youths];
 	const underagedTotal = underaged.reduce((storage, currentValue)=>{
 		return storage + currentValue
@@ -534,6 +527,7 @@ function searchAtKayak(e){
 	https://www.kayak.com/flights/${origin}-${destination}/${initDepature}/${returnDate}/${adults}adults/${seniors}seniors/${students}students/${passangerObj.class}/${childrenStr}
 	`
 	window.location.href = url;
+	console.log(datesObj);
 	console.log(url);
 }
 
