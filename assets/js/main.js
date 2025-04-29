@@ -118,6 +118,7 @@ Array.from(images).forEach((image, index)=>{
 const cards = document.querySelectorAll(".card");
 const mission = document.querySelector(".mission");
 const pageWrapper = document.getElementById("page-wrapper");
+const noRemove = document.querySelectorAll(".no-remove");
 
 
 [...cards].forEach(destination => {
@@ -125,7 +126,7 @@ const pageWrapper = document.getElementById("page-wrapper");
 });
 
 mission ? antiDisappearObserver.observe(mission) : ''
-
+noRemove.forEach(el=>antiDisappearObserver.observe(el))
 
 //BOOKING FORM
 const getAirlinesData = async (method) =>{

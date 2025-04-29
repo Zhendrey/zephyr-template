@@ -327,13 +327,15 @@ section.widget.last{
 		font-size: 1.5rem;
 	}
 }
-.reasons__link{
+.reasons__link,
+.no-remove{
 	opacity: 0;
 	transform: translateY(50px);
 	transition-property: opacity, transform;
 	transition-duration: 0.5s, 1s;
 }
-.reasons__link.active{
+.reasons__link.active,
+.no-remove.active{
 	opacity: 1;
 	transform: translateY(0);
 }
