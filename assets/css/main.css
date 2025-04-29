@@ -620,19 +620,19 @@ button.search{
 	justify-content: space-between;
 	align-items: center;
 	flex-grow: 1;
+	gap: 1.5rem;
 }
 @media (max-width: 425px) {
 	.item__body{
 		justify-content: center;
 		flex-wrap: wrap;
-		gap: 1.5rem;
 	}
 }
 .item__plane-icon{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	flex: 0 1 50px;
+	flex: 0 0 50px;
 	aspect-ratio: 1/0.8;
 	background-color: var(--offwhite);
 	border-radius: 5px;

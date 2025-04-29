@@ -342,7 +342,6 @@ isOneWay();
 const removed = datesObj.tommorow;
 
 trip.addEventListener("change", function(e){
-	console.log(e);
 	const oneWaySelected = isOneWay();
 	if(oneWaySelected){
 		returnDate.closest("label").style.display = 'none'
@@ -388,8 +387,8 @@ function checkInputs(event, {today, tommorow}, name){
 	const parentElem = event.target.closest(`label[for="dates"]`);
 	const datesError = parentElem.querySelector(".dates__error");
 	const dates = {today, tommorow}
-	let isDayOk = initMonth < today.month ? true : today.day <= tommorow.day;
-	let isMonthOk = initMonth <= dates['today'].month ? dates['today'].month <= dates['tommorow'].month : false;
+	let isDayOk = today.month < tommorow.month ? true : today.day <= tommorow.day;
+	let isMonthOk = dates['today'].month >= initMonth ? dates['today'].month <= dates['tommorow'].month : false;
 	const isYearOk = year == dates[name].year;
 
 	if(isOneWay()){
@@ -399,11 +398,8 @@ function checkInputs(event, {today, tommorow}, name){
 	dates[name].valid = isDayOk && isMonthOk && isYearOk;
 	
 	switch (true) {
-		case !isDayOk:
+		case !isDayOk || !isMonthOk:
 			datesError.textContent = "Please, provide an appropriate date!"
-			break;
-		case !isMonthOk:
-			datesError.textContent = `You cannot view flights from this past or future!`
 			break;
 		case !isYearOk:
 			datesError.textContent = `You can only view flights of this year!`
