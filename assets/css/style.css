@@ -27,4 +27,6 @@
 
 .icon-cross:before {
   content: "\ea0f";
+  font-family: inherit;
+  color: var(--dark-red);
 }

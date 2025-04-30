@@ -6,10 +6,12 @@
 -->
 <html>
 	<head>
-		<title>Zephyr Airline</title>
+		<title>Zephyr Airlines | Manage Booking</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css"/>
+		<link rel="stylesheet" href="assets/css/style.css"/>
+		<link rel="icon" href="images/zephyr-favicon.svg" type="image/svg+xml" sizes="16x16">	
 	</head>
 	<body class="is-preload homepage">
 		<div id="page-wrapper">
@@ -87,6 +89,7 @@
 											<section class="passanger">
 												<span class="passanger__button">1 passanger, economy, 0 bag</span>
 												<div class="passanger__dropdown dropdown">
+													<button type="button"><span class="icon icon-cross"></span></button>
 													<div class="dropdown__category category">
 														<h4 class="category__title">Adults</h4>
 														<p class="category__description">Age 18-64</p>
@@ -151,7 +154,7 @@
 														</div>
 													</div>
 													<div class="dropdown__category category">
-														<h3 class="category__title category__title-big">Cabin Class</h3>
+														<h3 class="category__title category__title-big">Class</h3>
 														<div class="category__options">
 															<label for="option" class="category__option">
 																Economy
@@ -159,7 +162,7 @@
 															</label>
 															<label for="option" class="category__option">
 																Premium
-																<input readonly name="class" class="category__input" value="premuim" type="radio">
+																<input readonly name="class" class="category__input" value="premium" type="radio">
 															</label>
 															<label for="option" class="category__option">
 																Business
@@ -179,7 +182,7 @@
 															<button type="button" class="category__increase">+</button>
 														</div>
 													</div>
-													<button type="button" class="dropdown__apply">Apply</button>
+													<button type="submit" class="dropdown__apply">Apply</button>
 												</div>
 											</section>
 											<button type="submit" class="form__group search">Search</button>

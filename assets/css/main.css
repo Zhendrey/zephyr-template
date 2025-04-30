@@ -113,6 +113,19 @@ h2{
 	color: var(--dark-red);
 	font-weight: bold;
 }
+.text-style_blue{
+	font-family: inherit;
+	text-transform: capitalize;
+	color: var(--dark-blue);
+	font-weight: bold;
+}
+.text-style_blue.underline{
+	font-family: inherit;
+	text-transform: capitalize;
+	color: var(--dark-blue);
+	font-weight: bold;
+	text-decoration: underline;
+}
 .fz-medium{
 	font-size: 1.25rem;
 }
@@ -134,7 +147,7 @@ div.row__content {
 	gap: 1rem;
 	position: relative;
 	overflow: hidden;
-	background-color: rgba(0, 0, 0, 0.7);
+	background-color: rgba(0, 0, 0, 0.8);
 	padding: 25px;
 }
 .row__image{
@@ -175,17 +188,21 @@ div.row__content {
 	opacity: 0;
 }
 .card img{
-	transition-property: box-shadow;
-	transition-property: 0.5s;
-	box-shadow: 0 0 0 0 none;
 	cursor: pointer;
 }
-.card > *{
+.box{
+	transition-property: transform background;
+	transition-duration: 0.5s;
+}
+.box .inner{
 	transition-property: inherit;
 	transition-duration: inherit;
 }
-.card > *:hover{
-	transform: scale(1.03);
+.box:hover:not(.box.container){
+	transform: scale(1.01);
+}
+.box .inner:hover{
+	background-color: rgb(245, 245, 245);
 }
 .card.active{
 	opacity: 1;
@@ -310,13 +327,15 @@ section.widget.last{
 		font-size: 1.5rem;
 	}
 }
-.reasons__link{
+.reasons__link,
+.no-remove{
 	opacity: 0;
 	transform: translateY(50px);
 	transition-property: opacity, transform;
 	transition-duration: 0.5s, 1s;
 }
-.reasons__link.active{
+.reasons__link.active,
+.no-remove.active{
 	opacity: 1;
 	transform: translateY(0);
 }
@@ -608,19 +627,19 @@ button.search{
 	justify-content: space-between;
 	align-items: center;
 	flex-grow: 1;
+	gap: 1.5rem;
 }
 @media (max-width: 425px) {
 	.item__body{
 		justify-content: center;
 		flex-wrap: wrap;
-		gap: 1.5rem;
 	}
 }
 .item__plane-icon{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	flex: 0 1 50px;
+	flex: 0 0 50px;
 	aspect-ratio: 1/0.8;
 	background-color: var(--offwhite);
 	border-radius: 5px;
@@ -661,22 +680,38 @@ h4.item__title {
 	text-decoration: underline;
 }
 .passanger__dropdown {
-	position: absolute;
-	left: 0;
-	top: 0;
-	width: auto;
-	height: auto;
-	transform: translateX(-45%);
 	z-index: 2;
 	box-shadow: 0 0 5px 0 rgba(111, 110, 110, 0.402);
 	background-color: white;
 	padding: 10px;
+	border: 1px solid #000000;
+}
+
+@media (min-width: 603px) {
+	.passanger__dropdown{
+		position: absolute;
+		transform: translateX(-45%);
+		left: 0;
+		top: 0;
+		width: auto;
+		height: auto;
+	}
 }
 .dropdown {
 	display: none;
 }
 .dropdown.active{
-	display: block;
+	display: flex;
+	flex-direction: column;
+}
+.dropdown button{
+	width: auto;
+	align-self: center;
+	padding: 5px;
+}
+.dropdown button:has(.icon){
+	align-self: flex-end;
+	background: transparent;
 }
 .dropdown__category {
 	display: flex;
@@ -686,6 +721,9 @@ h4.item__title {
 }
 .dropdown__category:not(:last-child){
 	margin-bottom: 30px;
+}
+.dropdown__category *:focus{
+	border: 2px solid #000000;
 }
 .category {
 }
@@ -697,8 +735,13 @@ h4.item__title {
 #banner .category__description {
 	font-size: 0.875rem;
 }
-.category__counter {
+.category__counter{
 	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+button.dropdown__apply{
+	padding: 10px 15px;
 }
 button.category__decrease,
 button.category__increase {
@@ -731,6 +774,22 @@ button.category__increase {
 div#page-wrapper{
 	padding-inline: 15px;
 }
+
+.hotel__link a{
+	color: #0004D8;
+	text-decoration: none;
+}
+.hotel__link a:hover{
+	text-decoration: underline;
+}
+.flights__link a{
+	color: #0004D8;
+	text-decoration: none;
+}
+.flights__link a:hover{
+	text-decoration: underline;
+}
+
 
 #nav ul li a{
 	color: linear-gradient(to right, var(--dark-blue) 0%, var(--dark-red) 100%);
@@ -917,6 +976,7 @@ input::-moz-focus-inner {
 	.container {
 		margin: 0 auto;
 		max-width: 100%;
+		padding: 15px;
 	}
 		@media screen and (max-width: 736px) {
 
@@ -2598,9 +2658,6 @@ section.widget ul.style2 li{
 	#header-wrapper.fixed{
 		padding: 0;
 		background-color: white;
-	}
-	#header-wrapper.fixed #header{
-		padding: 15px 0;
 	}
 
 	#features-wrapper {
