@@ -327,8 +327,8 @@ const datesObj = {
 	},
 	"tommorow": {
 		year: year,
-		month: day > 30 ? month++ : month,
-		day: day < 30 ? ++day : 1,
+		month: month,
+		day: day,
 		date: `${year}-${month}-${day}`,
 		valid: true,
 	},
@@ -354,8 +354,8 @@ trip.addEventListener("change", function(e){
 	}
 })
 
-const today = `${datesObj.today.year}-${datesObj.today.month}-${datesObj.today.day}`;
-const tomorrow = `${datesObj.tommorow.year}-${datesObj.tommorow.month}-${datesObj.tommorow.day}`;
+const today = `${datesObj.today.date}`;
+const tomorrow = `${datesObj.tommorow.date}`;
 
 const initDepature = today;
 const initReturn = tomorrow;
