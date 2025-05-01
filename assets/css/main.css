@@ -390,7 +390,11 @@ ol{
 .inner__title:hover{
 	text-decoration: underline;
 }
-
+a.stay{
+	max-width: 200px;
+	text-align: center;
+	font-weight: 700;
+}
 .stay__image {
 	max-width: 626px;
 }
