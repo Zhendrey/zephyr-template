@@ -180,6 +180,21 @@ div.row__content {
 	}
 }
 
+/*FLIGHTS*/
+header.flights.container{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#page-wrapper:has(.header.flights.container) #main-wrapper .container{
+	margin-top: 100px;
+}
+
+@media (min-width: 981px) {
+	header.flights.container{
+		justify-content: space-between;
+	}
+}
 /*FEATURES*/
 
 .card{
