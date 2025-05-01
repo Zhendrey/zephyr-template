@@ -330,6 +330,8 @@ const datesObj = {
 		month: month,
 		day:  ++day,
 		date: `${year}-${month}-0${day}`,
+		day: ++day,
+		date: `${year}-${month}-${day}`,
 		valid: true,
 	},
 }
