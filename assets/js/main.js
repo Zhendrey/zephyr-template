@@ -321,15 +321,15 @@ const datesObj = {
 	"today": {
 		year: year,
 		month: month,
-		day: day,
-		date: `${year}-${month}-${day}`,
+		day: '0' + day,
+		date: `${year}-${month}-0${day}`,
 		valid: true,
 	},
 	"tommorow": {
 		year: year,
 		month: month,
-		day: day,
-		date: `${year}-${month}-${day}`,
+		day:  ++day,
+		date: `${year}-${month}-0${day}`,
 		valid: true,
 	},
 }
