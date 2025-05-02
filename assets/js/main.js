@@ -325,7 +325,7 @@ const datesObj = {
 	"today": {
 		year: year,
 		month: month,
-		day: day,
+		day: 0,
 		date: currentToday ? currentToday : `${year}-${month}-0${day}`,
 		valid: true,
 	},
