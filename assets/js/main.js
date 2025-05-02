@@ -263,13 +263,16 @@ function manageItem(action, parent, content,  className, el){
 airportsList.forEach(item=>item.addEventListener("click", selectAirport))
 
 async function selectAirport(event){
-	const formEl = event.target.closest("form");
 	const targetElem = event.target.closest(".airports__item button");
 	const formDirection = event.target.closest(".form__direction");
 	const input = formDirection.querySelector("input");
 	const airportText = event.target.closest(".item__button").querySelector(".item__body").querySelector(".item__abriviation").textContent;
+	
+	//Pasting the airport
 	pasteSelectedAirport(targetElem.closest("label"), airportText);
+	
 	const selectedAirports = formDirection.querySelectorAll("button.selected-airport");
+	console.log(formDirection);
 	if(selectedAirports.length > 1){
 		deletePreviousAirport(selectedAirports);
 	}
@@ -280,8 +283,7 @@ function pasteSelectedAirport(parent, airportName){
 	parent.insertAdjacentHTML("afterbegin", 
 		`
 		<button class="selected-airport airports__selected-airport" type="button">
-			<span class="selected-airport__name">${airportName}</span>
-			<a href="#" class="selected-airport__remove icon icon-cross"></a>
+			${airportName}
 		</button>
 		`
 	)
@@ -316,23 +318,27 @@ let day = new Date().getDate();
 let initMonth = new Date().getMonth();
 const month = '0' + ++initMonth;
 const year = new Date().getFullYear();
+let currentToday = sessionStorage.getItem("today");
+let currentTommorrow = sessionStorage.getItem("tomorrow");
 
 const datesObj = {
 	"today": {
 		year: year,
 		month: month,
-		day: day,
-		date: `${year}-${month}-${day}`,
+		day: 0,
+		date: currentToday ? currentToday : `${year}-${month}-0${day}`,
 		valid: true,
 	},
 	"tommorow": {
 		year: year,
 		month: month,
-		day: day,
-		date: `${year}-${month}-${day}`,
+		day:  ++day,
+		date: currentTommorrow ? currentTommorrow : `${year}-${month}-0${day}`,
 		valid: true,
 	},
 }
+
+console.log(datesObj.today);
 
 
 function isOneWay(){
@@ -377,11 +383,16 @@ function changeInput(event){
 		.replace(month,'')
 		.slice(2,value.indexOf('-'));
 	
+	checkInputs(event, datesObj, name);
 	datesObj[name].year = Number(year);
 	datesObj[name].month = Number(month);
 	datesObj[name].day = Number(day);
-	datesObj[name].date = `${year}-${month}-${day}`
-	checkInputs(event, datesObj, name);
+	datesObj[name].date = `${year}-${month}-${day}`;
+	if(name == 'today'){
+		sessionStorage.setItem("today", datesObj[name].date);
+	}else if(name == 'tommorow'){
+		sessionStorage.setItem("tomorrow", datesObj[name].date);
+	}
 }
 function checkInputs(event, {today, tommorow}, name){
 	const targetElem = event.target.closest(`input[name=${name}]`);
