@@ -314,7 +314,10 @@ const dates = document.querySelectorAll(`.dates input[type="date"]`);
 const [departureDate, returnDate] = dates;
 
 //VARIABLES
-let day = new Date().getDate();
+let day =  new Date().getDate();
+let dayInc =  new Date().getDate() + 1;
+const dayStr = day < 10 ? ('0' + day) : day;
+const dayStrInc = dayInc < 10 ? ('0' + dayInc) : dayInc;
 let initMonth = new Date().getMonth();
 const month = '0' + ++initMonth;
 const year = new Date().getFullYear();
@@ -326,14 +329,14 @@ const datesObj = {
 		year: year,
 		month: month,
 		day: 0,
-		date: currentToday ? currentToday : `${year}-${month}-0${day}`,
+		date: currentToday ? currentToday : `${year}-${month}-${dayStr}`,
 		valid: true,
 	},
 	"tommorow": {
 		year: year,
 		month: month,
 		day:  ++day,
-		date: currentTommorrow ? currentTommorrow : `${year}-${month}-0${day}`,
+		date: currentTommorrow ? currentTommorrow : `${year}-${month}-${dayStrInc}`,
 		valid: true,
 	},
 }
